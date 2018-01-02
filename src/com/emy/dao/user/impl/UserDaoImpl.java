@@ -102,7 +102,7 @@ public class UserDaoImpl
     /**
      * 使用字段名查询数据表的记录
      *
-     * @param tag 字段名
+     * @param tag  字段名
      * @param find 检索信息
      * @return 记录
      */
@@ -112,9 +112,9 @@ public class UserDaoImpl
         String sql = "" +
                 "SELECT `id`,`userName`,`loginName`,`password`,`sex`,`identityCode`,`email`,`mobile`,`type` " +
                 "FROM easybuy_user " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, User.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, User.class, find);
     }
 
     /**

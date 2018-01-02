@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <!--主页部分    结束-->
-    <link rel="stylesheet" type="text/css" href="css/regist.css"/>
+    <link rel="stylesheet" type="text/css" href="css/rl.css"/>
 </head>
 <body>
 <div class="reg_div">
@@ -29,7 +29,7 @@
         <!--页面功能标记    S-->
         <input type="hidden" name="act" value="regist"/>
         <!--页面功能标记    S-->
-        <table class="reg_table" border="0" cellspacing="0" cellpadding="0">
+        <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
             <tbody>
             <!--页面跳转导航    S-->
             <tr height="35" valign="top">
@@ -42,101 +42,103 @@
             <!--标题    S-->
             <tr height="35" valign="top">
                 <td colspan="3">
-                    <span class="reg_span_title">注册</span>
+                    <span class="rl_span_title">注册</span>
                 </td>
             </tr>
             <!--标题    E-->
             <!--用户名    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户名</td>
-                <td class="reg_td_inp"><input class="reg_input" type="text" name="loginName" maxlength="20"
-                                              placeholder="最多20个字符" value=""
-                                              required></td>
-                <td class="reg_td_err"><span id="loginName_msg"></span></td>
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户名</td>
+                <td class="rl_td_inp"><input class="rl_input" type="text" id="loginName" maxlength="20"
+                                             placeholder="最多20个字符" value=""
+                                             required>
+                    <input type="hidden" name="loginNameHide" value="" required>
+                </td>
+                <td class="rl_td_err"><span id="loginName_msg"></span></td>
             </tr>
             <!--用户名    E-->
             <!--密码    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span color="#f00">*</span>&nbsp;密码</td>
-                <td class="reg_td_inp"><input class="reg_input" type="password" id="password" value="" required></td>
-                <td class="reg_td_err"><span id="password_msg"></span></td>
+                <td class="rl_td_spn"><span color="#f00">*</span>&nbsp;密码</td>
+                <td class="rl_td_inp"><input class="rl_input" type="password" id="password" value="" required></td>
+                <td class="rl_td_err"><span id="password_msg"></span></td>
             </tr>
             <!--密码    E-->
             <!--密码验证    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span style="color: #f00; ">*</span>&nbsp;确认密码</td>
-                <td class="reg_td_inp"><input class="reg_input" type="password" id="passwordRe" value="" required>
-                    <input type="hidden" name="passwordHide" value="">
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;确认密码</td>
+                <td class="rl_td_inp"><input class="rl_input" type="password" id="passwordRe" value="" required>
+                    <input type="hidden" name="passwordHide" value="" required>
                 </td>
-                <td class="reg_td_err"><span id="passwordRe_msg"></span></td>
+                <td class="rl_td_err"><span id="passwordRe_msg"></span></td>
             </tr>
             <!--密码验证    E-->
             <!--姓名    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span style="color: #f00; ">*</span>&nbsp;姓名</td>
-                <td class="reg_td_inp"><input class="reg_input" type="text" name="userName" maxlength="20"
-                                              placeholder="最多20个字符" value=""
-                                              required></td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;姓名</td>
+                <td class="rl_td_inp"><input class="rl_input" type="text" name="userName" maxlength="20"
+                                             placeholder="最多20个字符" value=""
+                                             required></td>
+                <td class="rl_td_err"></td>
             </tr>
             <!--姓名    E-->
             <!--性别    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span style="color: #f00; ">*</span>&nbsp;性别</td>
-                <td class="reg_td_inp"><input class="reg_radio" type="radio" name="sex" value="1" checked
-                                              required><span>男</span>
-                    <input class="reg_radio" type="radio" name="sex" value="2" required><span>女</span></td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;性别</td>
+                <td class="rl_td_inp"><input class="rl_radio" type="radio" name="sex" value="1" checked
+                                             required><span>男</span>
+                    <input class="rl_radio" type="radio" name="sex" value="2" required><span>女</span></td>
+                <td class="rl_td_err"></td>
             </tr>
             <!--性别    E-->
             <!--身份证    S-->
             <tr height="35">
-                <td class="reg_td_spn">身份证</td>
-                <td class="reg_td_inp"><input class="reg_input" type="text" maxlength="18" maxlength="18"
-                                              placeholder="最多18个字符"
-                                              name="identityCode" value=""></td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_spn">身份证</td>
+                <td class="rl_td_inp"><input class="rl_input" type="text" minlength="18" maxlength="18"
+                                             placeholder="18个字符"
+                                             name="identityCode" id="identityCode" value=""></td>
+                <td class="rl_td_err"><span id="identityCode_msg"></span></td>
             </tr>
             <!--身份证    E-->
             <!--邮箱    S-->
             <tr height="35">
-                <td class="reg_td_spn">邮箱</td>
-                <td class="reg_td_inp"><input class="reg_input" type="email" name="email" maxlength="80"
-                                              placeholder="最多80个字符" value="">
+                <td class="rl_td_spn">邮箱</td>
+                <td class="rl_td_inp"><input class="rl_input" type="email" name="email" maxlength="80"
+                                             placeholder="最多80个字符" value="">
                 </td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_err"></td>
             </tr>
             <!--邮箱    E-->
             <!--手机号    S-->
             <tr height="35">
-                <td class="reg_td_spn">手机号</td>
-                <td class="reg_td_inp"><input class="reg_input" type="text" maxlength="11" placeholder="最多11个字符"
-                                              name="mobile" value="">
+                <td class="rl_td_spn">手机号</td>
+                <td class="rl_td_inp"><input class="rl_input" type="text" minlength="11" maxlength="11" placeholder="11个数字"
+                                             name="mobile" id="mobile" value="">
                 </td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_err"><span id="mobile_msg"></span></td>
             </tr>
             <!--手机号    E-->
             <!--用户类型    S-->
             <tr height="35">
-                <td class="reg_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户类型</td>
-                <td class="reg_td_inp"><input class="reg_radio" type="radio" name="type" value="1" checked
-                                              required><span>买家</span>
-                    <input class="reg_radio" type="radio" name="type" value="2" required><span>店家</span></td>
-                <td class="reg_td_err"></td>
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户类型</td>
+                <td class="rl_td_inp"><input class="rl_radio" type="radio" name="type" value="1" checked
+                                             required><span>买家</span>
+                    <input class="rl_radio" type="radio" name="type" value="2" required><span>店家</span></td>
+                <td class="rl_td_err"></td>
             </tr>
             <!--用户类型    E-->
             <!--附选项    E-->
             <tr height="30" style="text-align: center">
                 <td class="reg_chk_btn" colspan="2">
-                    <input class="reg_btn" type="checkbox" id="chk_btn"><span style="color: #f00; ">同意条款规定</span></td>
+                    <input class="rl_btn" type="checkbox" id="chk_btn"><span style="color: #f00; ">同意条款规定</span></td>
                 </td>
                 <td></td>
             </tr>
             <!--附选项    E-->
             <!--递交按钮    S-->
             <tr height="60">
-                <td class="reg_td_btn" colspan="2">
-                    <input class="reg_btn" id="reg_btn" type="submit" value="注册">
+                <td class="rl_td_btn" colspan="2">
+                    <input class="rl_btn" id="reg_btn" type="submit" value="注册">
                 </td>
                 <td></td>
             </tr>

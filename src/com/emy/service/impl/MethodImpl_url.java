@@ -2,6 +2,7 @@ package com.emy.service.impl;
 
 import com.emy.dao.user.UserDao;
 import com.emy.dao.user.impl.UserDaoImpl;
+import com.emy.entity.Log;
 import com.emy.entity.User;
 import com.emy.service.Method_url;
 import com.emy.servlet.Servlet_url;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * 页面act指向的操作请求实现类
@@ -54,7 +56,6 @@ public class MethodImpl_url
             	//参数方法不存在
             	runInfo(req, res,"参数act的值不存在");
         }
-
     }
     
     /**
@@ -63,7 +64,7 @@ public class MethodImpl_url
     private void regist(){
     	//1.获取注册信息
         User user=new User();
-        user.setLoginName(req.getParameter("loginName"));
+        user.setLoginName(req.getParameter("loginNameHide"));
         user.setPassword(req.getParameter("passwordHide"));
         user.setUserName(req.getParameter("userName"));
         user.setSex(MathUtils.stringToInteger(req.getParameter("sex")));
@@ -75,9 +76,11 @@ public class MethodImpl_url
             //全部参数获取到值
             UserDao userDao=new UserDaoImpl();
             userDao.add(user);
-            runInfo(req,res,"注册成功");
+            Log.logToConsole("结果", user.getLoginName()+" 添加成功");
+            runInfo(req,res,"注册成功");            
         }else{
             //存在未赋值的参数
+        	Log.logToConsole("结果", user.getLoginName()+" 添加失败");
             runInfo(req, res,"参数不完整");
         }
     }
@@ -91,20 +94,12 @@ public class MethodImpl_url
         //2.检查帐号的存在性
         UserDao userDao = new UserDaoImpl();
         int i = userDao.getByField("loginName", loginName).size();
-        //3.判断帐号的状态
-        String msg;
-        if (i > 0) {
-            msg = "已经存在";
-        } else if (i == 0) {
-            msg = "可用使用";
-        } else {
-            msg = "帐号异常";
-        }
-        //4.回传结果
+		Log.logToConsole("结果", loginName + " " + i);
+        //3.回传结果
         PrintWriter out;
 		try {
 			out = res.getWriter();
-			out.write(msg);
+			out.write(String.valueOf(i));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}        

@@ -113,9 +113,9 @@ public class NewsDaoImpl
         String sql = "" +
                 "SELECT `id`,`title`,`content`,`creatTime` " +
                 "FROM easybuy_news " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, News.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, News.class, find);
     }
 
 

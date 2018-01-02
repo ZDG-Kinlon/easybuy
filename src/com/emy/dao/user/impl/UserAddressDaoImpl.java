@@ -111,9 +111,9 @@ public class UserAddressDaoImpl
         String sql = "" +
                 "SELECT `id`,`address`,`createTime`,`userId`,`isDefault`,`remark` " +
                 "FROM easybuy_user_address " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, UserAddress.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, UserAddress.class, find);
     }
 
     /**

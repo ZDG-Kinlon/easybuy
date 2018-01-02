@@ -4,12 +4,51 @@
  * @version 1.0.0
  */
 $(function () {
+    //S    同意条款
     //递交按钮初识化
     if ($(this).prop("checked")) {
         $("#reg_btn").prop("disabled", false);
     } else {
         $("#reg_btn").prop("disabled", true);
     }
+    $("#chk_btn").click(function () {
+        if ($(this).prop("checked")) {
+            $("#reg_btn").prop("disabled", false);
+        } else {
+            $("#reg_btn").prop("disabled", true);
+        }
+    });
+    //E    同意条款
+
+    //S    身份证检测
+    $("#identityCode").focus(function () {
+        $("#identityCode_msg").text("");
+    });
+    $("#identityCode").blur(function () {
+        var card = $(this).val().toLowerCase();
+        var reg = /(^\d{18}$)|(^\d{17}(\d|x)$)/;
+        if (reg.test(card) === false) {
+            $("#identityCode_msg").text("输入有误");
+        } else {
+            $("#identityCode_msg").text("");
+        }
+    });
+    //E    身份证检测
+
+    //S    手机号检测
+    $("#mobile").focus(function () {
+        $("#mobile_msg").text("");
+    });
+    $("#mobile").blur(function () {
+        var card = $(this).val().toLowerCase();
+        var reg = /^\d{11}$/;
+        if (reg.test(card) === false) {
+            $("#mobile_msg").text("输入有误");
+        } else {
+            $("#mobile_msg").text("");
+        }
+    });
+    //E    手机号检测
 
     //S    二次密码验证
     $("#password").focus(function () {
@@ -44,33 +83,40 @@ $(function () {
     });
     //E    二次密码验证
     //S    帐号存在性判断
-    $("[name='loginName']").focus(function () {
-    	$("#loginName_msg").text("");
+    $("#loginName").focus(function () {
+        $("#loginName_msg").text("");
     });
-    
-    $("[name='loginName']").blur(function () {
+
+    $("#loginName").blur(function () {
         //1.获取用户名
         var loginName = $(this).val().trim();
         //2.使用JQuery异步交互
         $.ajax({
             url: "url?act=registCheckLoginName",
             data: {"loginName": loginName},
-            dataType: "text", 
+            dataType: "text",
             type: "get",
             success: function (data) {
                 //3.消息提示
-                $("#loginName_msg").text(data);
-            }            
+                var str;
+                switch (data) {                
+                    case "0":
+                        str = "可以使用";
+                        $("[name='loginNameHide']").val($("#loginName").val());
+                        break;
+                    case "1":
+                        str = "已经存在";
+                        $("[name='loginNameHide']").val("");
+                        break;
+                    default:
+                        str = "检测异常";
+                        $("[name='loginNameHide']").val("");
+                        break;
+                }
+                $("#loginName_msg").text(str);
+            }
         });
     });
     //E    帐号存在性判断
-    //S    同意条款
-    $("#chk_btn").click(function () {
-        if ($(this).prop("checked")) {
-            $("#reg_btn").prop("disabled", false);
-        } else {
-            $("#reg_btn").prop("disabled", true);
-        }
-    });
-    //E    同意条款
+
 });

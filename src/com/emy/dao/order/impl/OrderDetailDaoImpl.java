@@ -110,9 +110,9 @@ public class OrderDetailDaoImpl
         String sql = "" +
                 "SELECT `id`,`orderId`,`productId`,`quantity`,`cost` " +
                 "FROM easybuy_order_detail " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, OrderDetail.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, OrderDetail.class, find);
     }
 
     /**

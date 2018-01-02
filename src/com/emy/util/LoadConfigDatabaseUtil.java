@@ -1,5 +1,7 @@
 package com.emy.util;
 
+import com.emy.entity.Log;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,20 +32,19 @@ public class LoadConfigDatabaseUtil {
             //配置文件读取异常
             e.printStackTrace();
         }
-
-        System.out.println("数据库初始化完毕");
+        Log.logToConsole("信息","数据库初始化完毕");
     }
 
     /**
      * 读取配置文件的信息，初始化
      */
     private static void init() throws IOException {
-        System.out.println("数据库配置加载");
         //1.创建Properties对象
         Properties properties = new Properties();
         //2.配置的文件名
         String configFileName = "config/database.properties";
         //3.载入配置信息
+        Log.logToConsole("信息","数据库配置文件加载 "+configFileName);
         properties.load(LoadConfigDatabaseUtil.class.getClassLoader().getResourceAsStream(configFileName));
         //4.配置转存
         driver = properties.getProperty("database.driver");

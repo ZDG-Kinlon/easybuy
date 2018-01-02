@@ -1,0 +1,74 @@
+/*
+===================
+注册和登录页面的基本样式
+===================
+@author:kinlon
+@version:1.0
+-------------------
+ */
+
+.rl_table {
+    /*外围框*/
+    font-size: 14px;
+    margin: 30px;
+}
+
+.rl_td_spn {
+    /*标签*/
+    width: 100px;
+}
+
+.rl_td_inp {
+    /*输入*/
+    width: 200px;
+}
+
+.rl_td_err {
+    /*异常消息*/
+    width: 200px;
+}
+
+#chk_btn {
+    /*条款同意按钮*/
+    display: inline-block;
+}
+
+.rl_span_title {
+    /*标题标签*/
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.rl_input {
+    /*输入框*/
+    margin-left: 10px;
+}
+
+.rl_td_btn {
+    /*按钮位置*/
+    text-align: center;
+}
+
+.rl_btn {
+    /*递交表单按钮*/
+    height: 30px;
+    width: 200px;
+}
+
+.rl_radio {
+    /*单选按钮*/
+    width: 20px;
+    margin-left: 30px;
+}
+
+#chk_btn {
+    /*同意条款*/
+    width: 12px;
+    vertical-align: middle;
+}
+
+.rl_btn {
+    /*递交表单按钮*/
+    height: 30px;
+    width: 200px;
+}

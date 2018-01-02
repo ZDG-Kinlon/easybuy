@@ -120,9 +120,9 @@ public class ProductDaoImpl
         String sql = "" +
                 "SELECT `id`,`name`,`description`,`price`,`stock`,`categoryLevel1`,`categoryLevel2`,`categoryLevel3`,`fileName`,`isDelete` "+
                 "FROM easybuy_product " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, Product.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, Product.class, find);
     }
 
     /**

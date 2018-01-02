@@ -21,55 +21,54 @@
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <!--主页部分    结束-->
-    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="css/rl.css"/>
 
 </head>
 <body>
 <div class="login_div">
-    <form class="login_form" action="<%=request.getContextPath()%>/url" method="post">
+    <form class="rl_form" action="<%=request.getContextPath()%>/url" method="post">
         <!--页面功能标记    S-->
         <input type="hidden" name="act" value="login"/>
         <!--页面功能标记    S-->
-        <table class="login_table" border="0" cellspacing="0" cellpadding="0">
+        <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
             <tbody>
             <!--页面跳转导航    S-->
             <tr height="35" valign="top">
-                <td colspan="2">
-                    <span><a href="<%=request.getContextPath()%>">返回首页</a></span>
+                <td colspan="3">
+                    <span><a href="<%=request.getContextPath()%>">返回首页</a>&nbsp;&nbsp;<a
+                            href="<%=request.getContextPath()%>/regist.jsp">帐号登录</a></span>
                 </td>
             </tr>
             <!--页面跳转导航    E-->
             <!--标题    S-->
             <tr height="35" valign="top">
-                <td colspan="2">
-                    <span class="login_span_title">登录</span>
+                <td colspan="3">
+                    <span class="rl_span_title">登录</span>
                 </td>
             </tr>
             <!--标题    E-->
             <!--用户名    S-->
             <tr height="35">
-                <td class="login_span"><font color="#f00">*</font>&nbsp;用户名</td>
-                <td><input class="login_input" type="text" name="loginName" value="" required></td>
+                <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户名</td>
+                <td class="rl_td_inp"><input class="rl_input" type="text" name="loginName" maxlength="20"
+                                             placeholder="最多20个字符" value=""
+                                             required></td>
+                <td class="rl_td_err"><span id="loginName_msg"></span></td>
             </tr>
             <!--用户名    E-->
             <!--密码    S-->
             <tr height="35">
-                <td class="login_span"><font color="#f00">*</font>&nbsp;密码</td>
-                <td><input class="login_input" type="password" name="password" value="" required></td>
+                <td class="rl_td_spn"><span color="#f00">*</span>&nbsp;密码</td>
+                <td class="rl_td_inp"><input class="rl_input" type="password" id="password" value="" required></td>
+                <td class="rl_td_err"><span id="password_msg"></span></td>
             </tr>
-            <!--密码     S-->
-            <!--登录导航    S-->
-            <tr>
-                <td class="login_span" colspan="2">
-                    <a href="<%=request.getContextPath()%>/regist.jsp">立即注册</a>&nbsp; &nbsp; &nbsp; <a
-                        href="#">忘记密码</a></td>
-            </tr>
-            <!--登录导航   E -->
+            <!--密码    E-->
             <!--递交按钮    S-->
             <tr height="60">
-                <td class="login_span" colspan="2">
-                    <input class="login_btn" type="button" value="登录" onclick="">
+                <td class="rl_td_btn" colspan="2">
+                    <input class="rl_btn" id="reg_btn" type="submit" value="注册">
                 </td>
+                <td></td>
             </tr>
             <!--递交按钮    E-->
             </tbody>

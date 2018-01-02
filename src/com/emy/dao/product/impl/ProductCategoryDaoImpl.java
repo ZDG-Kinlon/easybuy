@@ -110,9 +110,9 @@ public class ProductCategoryDaoImpl
         String sql = "" +
                 "SELECT `id`,`name`,`parentId`,`type` " +
                 "FROM easybuy_product_category " +
-                "WHERE ? = ?";
+                "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
-        return runSQL.sqlQueryGetList(sql, ProductCategory.class,tag,find);
+        return runSQL.sqlQueryGetList(sql, ProductCategory.class, find);
     }
 
 
