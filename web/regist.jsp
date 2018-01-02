@@ -52,7 +52,7 @@
                 <td class="rl_td_inp"><input class="rl_input" type="text" id="loginName" maxlength="20"
                                              placeholder="最多20个字符" value=""
                                              required>
-                    <input type="hidden" name="loginNameHide" value="" required>
+                    <input type="hidden" name="loginName" id="loginNameHide" value="" required>
                 </td>
                 <td class="rl_td_err"><span id="loginName_msg"></span></td>
             </tr>
@@ -68,7 +68,7 @@
             <tr height="35">
                 <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;确认密码</td>
                 <td class="rl_td_inp"><input class="rl_input" type="password" id="passwordRe" value="" required>
-                    <input type="hidden" name="passwordHide" value="" required>
+                    <input type="hidden" name="password" id="passwordHide" value="" required>
                 </td>
                 <td class="rl_td_err"><span id="passwordRe_msg"></span></td>
             </tr>

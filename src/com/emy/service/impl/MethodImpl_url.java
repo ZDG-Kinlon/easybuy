@@ -11,6 +11,8 @@ import com.emy.util.MathUtils;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -38,6 +40,15 @@ public class MethodImpl_url
         this.req = req;
         this.res = res;
     }
+    
+    /**
+     * 根据name获取表单的value信息
+     * @param name
+     * @return
+     */
+    public String getVal(String name){
+    	return req.getParameter(name);
+    }
 
     /**
      * 处理Servlet请求的总调度
@@ -51,11 +62,41 @@ public class MethodImpl_url
                 break;
             case "registCheckLoginName":
             	registCheckLoginName();
-                break;            
+                break;     
+            case "login":
+            	login();
+            	break;
             default:
             	//参数方法不存在
             	runInfo(req, res,"参数act的值不存在");
         }
+    }
+    
+    private void login(){
+    	//1.获取登录信息
+    	String loginName=getVal("loginName");
+    	String password=getVal("password");
+    	Log.logToConsole("信息", password);
+    	//2.获取数据库密码
+    	UserDao userDao=new UserDaoImpl();
+    	List<User> list=userDao.getByField("loginName", loginName);
+    	if (list.size()==1){
+    		//帐号存在
+    		User user=list.get(0);
+    		if(user.getPassword().equals(password)){
+    			HttpSession session = req.getSession();    			
+    			session.setAttribute("loginName", loginName);	
+    			Log.logToConsole("结果", loginName+" 登录成功");
+    			runInfo(req,res,loginName+" 登录成功"); 
+    		}else{
+    			Log.logToConsole("结果", loginName+" 密码错误");
+    			runInfo(req,res,loginName+" 密码错误"); 
+    		}
+    	}else{
+    		//帐号不存在
+    		Log.logToConsole("结果", loginName+" 不存在");
+    		runInfo(req,res,loginName+" 帐号不存在"); 
+    	}   	
     }
     
     /**
@@ -64,14 +105,14 @@ public class MethodImpl_url
     private void regist(){
     	//1.获取注册信息
         User user=new User();
-        user.setLoginName(req.getParameter("loginNameHide"));
-        user.setPassword(req.getParameter("passwordHide"));
-        user.setUserName(req.getParameter("userName"));
-        user.setSex(MathUtils.stringToInteger(req.getParameter("sex")));
-        user.setIdentityCode(req.getParameter("identityCode"));
-        user.setEmail(req.getParameter("email"));
-        user.setMobile(req.getParameter("mobile"));
-        user.setType(MathUtils.stringToInteger(req.getParameter("type")));
+        user.setLoginName(getVal("loginName"));
+        user.setPassword(getVal("password"));
+        user.setUserName(getVal("userName"));
+        user.setSex(MathUtils.stringToInteger(getVal("sex")));
+        user.setIdentityCode(getVal("identityCode"));
+        user.setEmail(getVal("email"));
+        user.setMobile(getVal("mobile"));
+        user.setType(MathUtils.stringToInteger(getVal("type")));
         if(user.chack()){
             //全部参数获取到值
             UserDao userDao=new UserDaoImpl();
@@ -90,7 +131,7 @@ public class MethodImpl_url
      */
     private void registCheckLoginName(){
     	//1.获取待检测的帐号
-        String loginName = req.getParameter("loginName");
+        String loginName = getVal("loginName");
         //2.检查帐号的存在性
         UserDao userDao = new UserDaoImpl();
         int i = userDao.getByField("loginName", loginName).size();

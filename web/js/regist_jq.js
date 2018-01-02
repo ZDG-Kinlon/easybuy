@@ -69,7 +69,7 @@ $(function () {
             var pwdE = MD5($pwd.eq(0).val().trim());
             if (pwdE === MD5($pwd.eq(1).val().trim())) {
                 //写入加密后的密码
-                $("[name='passwordHide']").val(pwdE);
+                $("#passwordHide").val(pwdE);
                 console.log(pwdE);
                 $("#passwordRe_msg").text("");
             } else {
@@ -102,15 +102,15 @@ $(function () {
                 switch (data) {                
                     case "0":
                         str = "可以使用";
-                        $("[name='loginNameHide']").val($("#loginName").val());
+                        $("#loginNameHide").val($("#loginName").val());
                         break;
                     case "1":
                         str = "已经存在";
-                        $("[name='loginNameHide']").val("");
+                        $("#loginNameHide").val("");
                         break;
                     default:
                         str = "检测异常";
-                        $("[name='loginNameHide']").val("");
+                        $("#loginNameHide").val("");
                         break;
                 }
                 $("#loginName_msg").text(str);
