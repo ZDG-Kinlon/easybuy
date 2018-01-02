@@ -4,6 +4,7 @@ package com.emy.entity;
 
 /**
  * 易买网-用户类
+ *
  * @author Kinlon
  * @version 1.0.0
  */
@@ -37,6 +38,27 @@ public class User {
         this.password = password;
         this.sex = sex;
         this.type = type;
+    }
+
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean chack() {
+        if (this.userName == null) {
+            return false;
+        } else if (this.loginName == null) {
+            return false;
+        } else if (this.password == null) {
+            return false;
+        } else if (this.sex == 0) {
+            return false;
+        } else if (this.type == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //get set方法    S

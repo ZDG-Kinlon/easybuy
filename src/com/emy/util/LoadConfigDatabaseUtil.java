@@ -30,6 +30,7 @@ public class LoadConfigDatabaseUtil {
             //配置文件读取异常
             e.printStackTrace();
         }
+
         System.out.println("数据库初始化完毕");
     }
 
@@ -37,7 +38,7 @@ public class LoadConfigDatabaseUtil {
      * 读取配置文件的信息，初始化
      */
     private static void init() throws IOException {
-        System.out.println("数据库初始化");
+        System.out.println("数据库配置加载");
         //1.创建Properties对象
         Properties properties = new Properties();
         //2.配置的文件名

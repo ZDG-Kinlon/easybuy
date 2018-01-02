@@ -50,6 +50,15 @@ public interface PublicDao<T> {
     public T getById(int id);
 
     /**
+     * 使用字段名查询数据表的记录
+     *
+     * @param fieId 字段名
+     * @param find 检索信息
+     * @return 记录
+     */
+    public List<T> getByField(String fieId,String find);
+
+    /**
      * 使用分页查询数据表记录
      *
      * @param pageIndex 页码

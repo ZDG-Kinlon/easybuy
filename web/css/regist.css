@@ -1,0 +1,74 @@
+/*
+===================
+注册页面的基本样式
+===================
+@author:kinlon
+@version:1.0
+-------------------
+ */
+
+.reg_table {
+    /*注册框*/
+    font-size: 14px;
+    margin: 30px;
+}
+
+.reg_td_spn {
+    /*注册框标签*/
+    width: 100px;
+}
+
+.reg_td_inp {
+    /*注册框输入*/
+    width: 200px;
+}
+
+.reg_td_err {
+    /*注册框异常消息*/
+    width: 200px;
+}
+
+#chk_btn {
+    /*条款同意按钮*/
+    display: inline-block;
+}
+
+.reg_span_title {
+    /*注册框标题标签*/
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+.reg_input {
+    /*注册框输入框*/
+    margin-left: 10px;
+}
+
+.reg_td_btn {
+    /*注册按钮位置*/
+    text-align: center;
+}
+
+.reg_btn {
+    /*注册框递交表单按钮*/
+    height: 30px;
+    width: 200px;
+}
+
+.reg_radio {
+    /*注册框单选按钮*/
+    width: 20px;
+    margin-left: 30px;
+}
+
+#chk_btn {
+    /*同意条款*/
+    width: 12px;
+    vertical-align: middle;
+}
+
+.reg_btn {
+    /*登录框递交表单按钮*/
+    height: 30px;
+    width: 200px;
+}

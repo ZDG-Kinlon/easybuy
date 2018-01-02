@@ -1,5 +1,7 @@
 package com.emy.servlet;
 
+import com.emy.service.impl.MethodImpl_url;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +11,8 @@ import java.io.IOException;
 
 /**
  * Servlet类
- * 处理网页的操作请求
+ * 处理网页的跳转请求
+ *
  * @author Kinlon
  * @version 1.0.0
  */
@@ -23,8 +26,8 @@ public class Servlet_url extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        doServlet(request, response);
     }
 
     /**
@@ -35,8 +38,37 @@ public class Servlet_url extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        doServlet(request, response);
+    }
 
+    private void doServlet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //获取请求的目标方法
+        String method = request.getParameter("act");
+        if (method == null) {
+            //空请求返回参数无效页面
+            response.sendRedirect("/404.jsp");
+        } else {
+            //创建Service对象，处理操作
+            MethodImpl_url act = new MethodImpl_url(method, request, response);
+            try {
+                //执行请求
+                act.run();
+            } catch (Exception e) {
+                //请求的方法不存在
+                e.printStackTrace();
+                runInfo(request, response, "参数act的值不存在");
+            }
+        }
+    }
+
+    public void runInfo(HttpServletRequest request, HttpServletResponse response, String msg) {
+        try {
+            request.setAttribute("runInfo", msg);
+            request.getRequestDispatcher("runInfo.jsp").forward(request, response);
+        } catch (IOException | ServletException e) {
+            e.printStackTrace();
+        }
     }
 
 }
