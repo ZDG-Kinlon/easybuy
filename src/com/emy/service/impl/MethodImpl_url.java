@@ -29,6 +29,7 @@ public class MethodImpl_url
     private String functions;
     private HttpServletRequest req;
     private HttpServletResponse res;
+    private User user;
 
     /**
      * 构造方法
@@ -41,14 +42,67 @@ public class MethodImpl_url
         this.res = res;
     }
 
+
+    private String getVal(String key) {
+        return req.getParameter(key);
+    }
+
+    private void setVal(String key,Object val){
+        req.setAttribute(key,val);
+    }
+
     /**
-     * 根据name获取表单的value信息
+     * 帐号的密码正确性检测
      *
-     * @param name
-     * @return
+     * @param loginName 帐号
+     * @param password 密码
+     * @return 0正常
      */
-    public String getVal(String name) {
-        return req.getParameter(name);
+    private int checkPassword(String loginName, String password) {
+        UserDao userDao = new UserDaoImpl();
+        List<User> list = userDao.getByField("loginName", loginName);
+        if (list.size() == 1) {
+            //帐号存在
+            this.user = list.get(0);
+            if (this.user.getPassword().equals(password)) {
+                return 0;//密码正确
+            } else {
+                return 1;//密码错误
+            }
+        } else {
+            return 2;//帐号不存在
+            //帐号不存在
+        }
+    }
+
+    /**
+     * 判断用户已经登录
+     *
+     * @return 0正常
+     */
+    private int checkIsLogin() {
+        //1.获取数据
+        HttpSession session = req.getSession();
+        String sId = session.getId();
+        User sUser = (User) session.getAttribute("user");
+        String sLoginName = sUser.getLoginName();
+        String sPassword = sUser.getPassword();
+        String id = getVal("sessionId");
+        String loginName = getVal("loginName");
+        String password = getVal("password");
+        //2.数据比对
+        if (sId != null && id != null && sId.equals(id) &&
+                sLoginName != null && loginName != null && sLoginName.equals(loginName) &&
+                sPassword != null && password != null && sPassword.equals(password) &&
+                checkPassword(loginName, password)==0) {
+            if (req.getHeader("Referer") != null) {
+                return 0;//正常
+            } else {
+                return 1;//异常
+            }
+        } else {
+            return 2;//没有登录
+        }
     }
 
     /**
@@ -71,9 +125,35 @@ public class MethodImpl_url
             case "logout"://登出
                 logout();
                 break;
+            case "setUser"://修改用户信息
+                setUser();
+                break;
             default:
                 //参数方法不存在
                 toInfoPage(req, res, this.functions + "请求不存在");
+        }
+    }
+
+    /**
+     * 修改用户信息
+     */
+    private void setUser() {
+        Log.logToConsole("请求", "用户信息修改");
+        switch (checkIsLogin()) {
+            case 0:
+                /*
+                HttpSession session = req.getSession();
+                Log.logToConsole("结果", loginName + "已修改");
+                */
+                break;
+            case 1:
+                toInfoPage(req, res, "退出失败，参数异常");
+                break;
+            case 2:
+                toInfoPage(req, res, "退出失败，请先登录");
+                break;
+            default:
+                break;
         }
     }
 
@@ -82,30 +162,21 @@ public class MethodImpl_url
      */
     private void logout() {
         Log.logToConsole("请求", "退出");
-        //1.获取session，帐号，密码
-        HttpSession session = req.getSession();
-        String sId = session.getId();
-        User sUser=(User)session.getAttribute("user");        
-        String sLoginName = sUser.getLoginName();
-        String sPassword = sUser.getPassword();
-        String id = (String) req.getParameter("sessionId");
-        String loginName = (String) req.getParameter("loginName");
-        String password = (String) req.getParameter("password");
-        //2.数据比对
-        if (sId != null && id != null && sId.equals(id) &&
-                sLoginName != null && loginName != null && sLoginName.equals(loginName) &&
-                sPassword != null && password != null && sPassword.equals(password)) {
-            //获取页面地址
-            String url = req.getHeader("Referer");
-            if (url == null) {
-                toInfoPage(req, res, "非正常退出");
-            } else {
+        switch (checkIsLogin()) {
+            case 0:
+                HttpSession session = req.getSession();
                 session.invalidate();
-                Log.logToConsole("结果", loginName + "已退出");
-                toPage(res, url);
-            }
-        } else {
-            toInfoPage(req, res, "退出失败");
+                Log.logToConsole("结果", getVal("loginName") + "已退出");
+                toPage(res, req.getHeader("Referer"));
+                break;
+            case 1:
+                toInfoPage(req, res, "退出失败，参数异常");
+                break;
+            case 2:
+                toInfoPage(req, res, "退出失败，请先登录");
+                break;
+            default:
+                break;
         }
     }
 
@@ -116,26 +187,24 @@ public class MethodImpl_url
         //1.获取登录信息
         String loginName = getVal("loginName");
         String password = getVal("password");
-        //2.获取数据库密码
-        UserDao userDao = new UserDaoImpl();
-        List<User> list = userDao.getByField("loginName", loginName);
-        if (list.size() == 1) {
-            //帐号存在
-            User user = list.get(0); 
-            if (user.getPassword().equals(password)) {
+        switch (checkPassword(loginName, password)) {
+            case 0:
                 HttpSession session = req.getSession();
-                session.setAttribute("user", user);
+                session.setAttribute("user", this.user);
                 session.setMaxInactiveInterval(1800);//30分钟后失效
                 Log.logToConsole("结果", loginName + " 登录成功");
                 toInfoPage(req, res, loginName + " 登录成功");
-            } else {
+                break;
+            case 1:
                 Log.logToConsole("结果", loginName + " 密码错误");
                 toInfoPage(req, res, loginName + " 密码错误");
-            }
-        } else {
-            //帐号不存在
-            Log.logToConsole("结果", loginName + " 不存在");
-            toInfoPage(req, res, loginName + " 帐号不存在");
+                break;
+            case 2:
+                Log.logToConsole("结果", loginName + " 不存在");
+                toInfoPage(req, res, loginName + " 帐号不存在");
+                break;
+            default:
+                break;
         }
     }
 

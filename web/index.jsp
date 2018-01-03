@@ -33,7 +33,7 @@
         //S    已登录
         %><!--已登录    开始-->
     <span class="wc_span">
-            您好，欢迎<a href="#">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
+            您好，欢迎<a href="<%=request.getContextPath()%>/user.jsp">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
             href="<%=request.getContextPath()%>/url?act=logout&sessionId=<%=session.getId()%>&loginName=<%=user.getLoginName()%>&password=<%=user.getPassword()%>">【退出】</a>
         </span>
     <!--已登录    结束--><%
@@ -42,7 +42,7 @@
         //S    没有登录
         %><!--没有登录    开始-->
     <span class="wc_span">
-            还没加入我们？<a href="regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a href="login.jsp">【登录】</a>
+            还没加入我们？<a href="<%=request.getContextPath()%>regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a href="login.jsp">【登录】</a>
         </span>
     <!--没有登录    结束--><%
         //E    没有登录
