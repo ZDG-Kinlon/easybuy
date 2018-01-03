@@ -33,6 +33,27 @@ public class OrderDetail {
         this.cost = cost;
     }
 
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.orderId == 0) {
+            return false;
+        } else if (this.productId == 0) {
+            return false;
+        } else if (this.quantity == 0) {
+            return false;
+        } else if (this.cost == 0.0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //get set方法    S
     public int getId() {
         return id;

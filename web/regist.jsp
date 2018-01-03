@@ -34,8 +34,8 @@
             <!--页面跳转导航    S-->
             <tr height="35" valign="top">
                 <td colspan="3">
-                    <span><a href="<%=request.getContextPath()%>">返回首页</a>&nbsp;&nbsp;<a
-                            href="<%=request.getContextPath()%>/login.jsp">帐号登录</a></span>
+                    <span><a href="<%=request.getContextPath()%>">【返回首页】</a>&nbsp;&nbsp;<a
+                            href="<%=request.getContextPath()%>/login.jsp">【帐号登录】</a></span>
                 </td>
             </tr>
             <!--页面跳转导航    E-->

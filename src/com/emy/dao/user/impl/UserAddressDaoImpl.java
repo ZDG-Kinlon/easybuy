@@ -30,7 +30,7 @@ public class UserAddressDaoImpl
         return runSQL.sqlUpdate(sql,
                 obj.getAddress(),
                 obj.getCreateTime(),
-                obj.getUserID(),
+                obj.getUserId(),
                 obj.getIsDefault(),
                 obj.getRemark());
     }
@@ -76,7 +76,7 @@ public class UserAddressDaoImpl
         return runSQL.sqlUpdate(sql,
                 obj.getAddress(),
                 obj.getCreateTime(),
-                obj.getUserID(),
+                obj.getUserId(),
                 obj.getIsDefault(),
                 obj.getRemark());
     }

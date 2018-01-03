@@ -4,6 +4,7 @@ package com.emy.entity;
 
 /**
  * 易买网-商品分类类
+ *
  * @author Kinlon
  * @version 1.0.0
  */
@@ -26,6 +27,25 @@ public class ProductCategory {
         this.name = name;
         this.parentId = parentId;
         this.type = type;
+    }
+
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.name == null) {
+            return false;
+        } else if (this.parentId == 0) {
+            return false;
+        } else if (this.type == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //get set方法    S

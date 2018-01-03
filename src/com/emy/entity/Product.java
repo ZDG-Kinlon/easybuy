@@ -44,6 +44,31 @@ public class Product {
         this.isDelete = isDelete;
     }
 
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.name == null) {
+            return false;
+        } else if (this.categoryLevel1 == 0) {
+            return false;
+        } else if (this.price == 0.0) {
+            return false;
+        } else if (this.stock == 0) {
+            return false;
+        } else if (this.fileName == null) {
+            return false;
+        }else if (this.isDelete == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //get set方法    S
     public int getId() {
         return id;

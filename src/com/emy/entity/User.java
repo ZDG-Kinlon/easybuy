@@ -45,8 +45,10 @@ public class User {
      *
      * @return
      */
-    public boolean chack() {
-        if (this.userName == null) {
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.userName == null) {
             return false;
         } else if (this.loginName == null) {
             return false;

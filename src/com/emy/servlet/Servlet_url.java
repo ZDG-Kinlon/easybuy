@@ -1,6 +1,6 @@
 package com.emy.servlet;
 
-import com.emy.entity.Log;
+import com.emy.util.Log;
 import com.emy.service.impl.MethodImpl_url;
 
 import javax.servlet.ServletException;
@@ -59,15 +59,15 @@ public class Servlet_url extends HttpServlet {
             } catch (Exception e) {
                 //请求的方法不存在
                 e.printStackTrace();
-                runInfo(request, response, "参数act的值不存在");
+                toInfoPage(request, response, "参数act的值不存在");
             }
         }
     }
 
-    public void runInfo(HttpServletRequest request, HttpServletResponse response, String msg) {
+    public void toInfoPage(HttpServletRequest request, HttpServletResponse response, String msg) {
         try {
-            request.setAttribute("runInfo", msg);
-            request.getRequestDispatcher("runInfo.jsp").forward(request, response);
+            request.setAttribute("msg", msg);
+            request.getRequestDispatcher("infoPage.jsp").forward(request, response);
         } catch (IOException | ServletException e) {
             e.printStackTrace();
         }

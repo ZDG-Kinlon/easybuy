@@ -43,6 +43,35 @@ public class Order {
         this.serialNumber = serialNumber;
     }
 
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.userId == null) {
+            return false;
+        } else if (this.loginName ==null) {
+            return false;
+        } else if (this.userAddress == null) {
+            return false;
+        } else if (this.createTime == null) {
+            return false;
+        } else if (this.cost == 0.0) {
+            return false;
+        } else if (this.status == 0) {
+            return false;
+        } else if (this.type == 0) {
+            return false;
+        } else if (this.serialNumber == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //get set方法    S
     public int getId() {
         return id;

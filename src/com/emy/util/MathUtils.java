@@ -8,26 +8,30 @@ package com.emy.util;
  */
 public class MathUtils {
 
-	/**
-	 * 字符转整数
-	 *
-	 * @param num
-	 *            字符串
-	 * @return 整数，不能转换默认为0
-	 */
-	public static int stringToInteger(String num) {
-		if (RegexUtils.isInteger(num)) {
-			return Integer.parseInt(num);
-		} else {
-			return 0;
-		}
-	}
+    /**
+     * 字符转整数
+     *
+     * @param num 字符串
+     * @return 整数，不能转换默认为0
+     */
+    public static int stringToInteger(String num) {
+        Log.logToConsole("输出",num);
+        if (num == null) {
+            return 0;
+        } else if (RegexUtils.isInteger(num)) {
+            return Integer.parseInt(num);
+        } else {
+            return 0;
+        }
+    }
 
-	public static double stringToDouble(String num) {
-		if (RegexUtils.isDouble(num)) {
-			return Integer.parseInt(num);
-		} else {
-			return 0.0;
-		}
-	}
+    public static double stringToDouble(String num) {
+        if (num == null) {
+            return 0;
+        } else if (RegexUtils.isDouble(num)) {
+            return Integer.parseInt(num);
+        } else {
+            return 0.0;
+        }
+    }
 }

@@ -1,7 +1,5 @@
 package com.emy.util;
 
-import com.emy.entity.Log;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;

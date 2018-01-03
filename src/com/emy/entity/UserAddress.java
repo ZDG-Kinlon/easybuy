@@ -16,7 +16,7 @@ public class UserAddress {
     //创建时间
     private Date createTime;
     //用户主键
-    private int userID;
+    private int userId;
     //默认地址
     private int isDefault;
     //备注，可选
@@ -29,9 +29,31 @@ public class UserAddress {
         this.id = id;
         this.address = address;
         this.createTime = createTime;
-        this.userID = userID;
+        this.userId = userID;
         this.isDefault = isDefault;
     }
+
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.address == null) {
+            return false;
+        } else if (this.createTime == null) {
+            return false;
+        } else if (this.userId == 0) {
+            return false;
+        } else if (this.isDefault == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //get set方法    S
 
     public int getId() {
@@ -58,12 +80,12 @@ public class UserAddress {
         this.createTime = createTime;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getIsDefault() {

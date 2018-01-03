@@ -30,6 +30,25 @@ public class News {
         this.creatTime = creatTime;
     }
 
+    /**
+     * 变量未赋值检测
+     *
+     * @return
+     */
+    public boolean check() {
+        if (this.id == 0) {
+            return false;
+        } else if (this.title == null) {
+            return false;
+        } else if (this.content ==null) {
+            return false;
+        } else if (this.creatTime == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //get set方法    S
     public int getId() {
         return id;
