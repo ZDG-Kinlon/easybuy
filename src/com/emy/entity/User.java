@@ -31,24 +31,13 @@ public class User {
     public User() {
     }
 
-    public User(int id, String userName, String loginName, String password, int sex, int type) {
-        this.id = id;
-        this.userName = userName;
-        this.loginName = loginName;
-        this.password = password;
-        this.sex = sex;
-        this.type = type;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.userName == null) {
+        if (this.userName == null) {
             return false;
         } else if (this.loginName == null) {
             return false;

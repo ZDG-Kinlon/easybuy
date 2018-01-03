@@ -8,5 +8,8 @@ $(function() {
 	$("#password").blur(function() {
 		$("#passwordHide").val(MD5($(this).val()));
 	});
+	$("#password").keyup(function() {
+		$("#passwordHide").val(MD5($(this).val()));			
+	});
 //E    密码加密
 });

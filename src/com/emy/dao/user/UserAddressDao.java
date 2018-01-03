@@ -8,9 +8,14 @@ import com.emy.entity.UserAddress;
  */
 public interface UserAddressDao
         extends PublicDao<UserAddress> {
+
     /**
-     * 继承公共接口
-     * UserAddress专属的接口写在这里
+     * 设置默认地址
+     *
+     * @param userId 用户编号
+     * @param id     用户地址编号
+     * @return 影响的记录个数
      */
+    public int setDefaultAddress(int userId, int id);
 
 }

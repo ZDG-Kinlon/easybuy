@@ -1,6 +1,10 @@
 <%@ page import="com.emy.entity.User" %>
 <%@ page import="com.emy.service.impl.ServiceImpl" %>
-<%@ page import="com.emy.service.Service" %><%--
+<%@ page import="com.emy.service.Service" %>
+<%@ page import="com.emy.entity.UserAddress" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.emy.dao.user.UserAddressDao" %>
+<%@ page import="com.emy.dao.user.impl.UserAddressDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/3
@@ -22,22 +26,37 @@
     <!--基础样式 -->
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
+    <link rel="stylesheet" type="text/css" href="css/html.css"/>
+    <!--主页部分    结束-->
 </head>
 <%
     User user = (User) session.getAttribute("user");
     Service service = new ServiceImpl();
     if (user == null || !service.checkUserPwd(user.getId(), user.getLoginName(), user.getPassword())) {
         //未登录
+        user = new User();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
+<!-- 导航链接    开始 -->
 <body>
-
-<table>
+<table border="0" cellspacing="0" cellpadding="0">
     <tbody>
     <tr>
-        <td colspan="2" border="0" cellspacing="0" cellpadding="0">
-            <span>用户信息</span>
+        <td>
+            <a href="<%=request.getContextPath()%>">【返回首页】</a>&nbsp;&nbsp;
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- 导航链接    结束 -->
+<br/>
+<!-- 用户信息    开始 -->
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td colspan="2" align="center">
+            <span>====用户信息====</span>
         </td>
     </tr>
     <tr>
@@ -46,6 +65,39 @@
         </td>
         <td>
             <span><%=user.getLoginName()%></span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <span><a
+                    href="<%=request.getContextPath()%>/url?act=logout">【退出】</a><a
+                    href="<%=request.getContextPath()%>/setUser.jsp">【修改以下信息】</a>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>帐号类型</span>
+        </td>
+        <td>
+            <span>
+                 <%
+                     switch (user.getType()) {
+                         case 1:
+                             out.print("买家");
+                             break;
+                         case 2:
+                             out.print("店家");
+                             break;
+                         case 3:
+                             out.print("管理员");
+                             break;
+                         default:
+                             request.setAttribute("msg", "帐号类型异常：" + user.getType());
+                             break;
+                     }
+                 %>
+            </span>
         </td>
     </tr>
     <tr>
@@ -71,26 +123,17 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2">
-            <span><a
-                    href="<%=request.getContextPath()%>/url?act=logout&sessionId=<%=session.getId()%>&loginName=<%=user.getLoginName()%>&password=<%=user.getPassword()%>">【退出】</a><a
-                    href="<%=request.getContextPath()%>/url?act=setUser&sessionId=<%=session.getId()%>&loginName=<%=user.getLoginName()%>&password=<%=user.getPassword()%>">【修改以下信息】</a>
-            </span>
-        </td>
-    </tr>
-
-    <tr>
         <td>
             <span>身份证</span>
         </td>
         <td>
             <span>
                 <%
-                   if (user.getIdentityCode()!=null) {
-                       out.print(user.getIdentityCode());
-                   }else{
-                       out.print("无");
-                   }
+                    if (user.getIdentityCode() != null) {
+                        out.print(user.getIdentityCode());
+                    } else {
+                        out.print("无");
+                    }
                 %>
             </span>
         </td>
@@ -102,9 +145,9 @@
         <td>
             <span>
                 <%
-                    if (user.getEmail()!=null) {
+                    if (user.getEmail() != null) {
                         out.print(user.getEmail());
-                    }else{
+                    } else {
                         out.print("无");
                     }
                 %>
@@ -118,9 +161,9 @@
         <td>
             <span>
                 <%
-                    if (user.getEmail()!=null) {
+                    if (user.getEmail() != null) {
                         out.print(user.getMobile());
-                    }else{
+                    } else {
                         out.print("无");
                     }
                 %>
@@ -129,6 +172,97 @@
     </tr>
     </tbody>
 </table>
-
+<!-- 用户信息    结束 -->
+<br/>
+<!-- 收货地址    开始 -->
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td colspan="4" align="center">
+            <span>====收货地址====</span>
+        </td>
+    </tr>
+    <!--标题    开始-->
+    <tr>
+        <td align="center">
+            <span>创建时间</span>
+        </td>
+        <td align="center">
+            <span>地址</span>
+        </td>
+        <td align="center">
+            <span>备注</span>
+        </td>
+        <td align="center">
+            <span>操作</span>
+        </td>
+    </tr>
+    <!--标题    结束-->
+    <!--地址信息    开始-->
+    <%
+        UserAddressDao userAddressDao = new UserAddressDaoImpl();
+        List<UserAddress> userAddressList = userAddressDao.getByField("userId", String.valueOf(user.getId()));
+        int n = userAddressList.size();
+        if (n > 0) {
+            for (UserAddress userAddress : userAddressList) {
+    %>
+    <tr>
+        <td>
+            <span><%=userAddress.getCreateTime()%></span>
+        </td>
+        <td>
+            <span><%=userAddress.getAddress()%></span>
+        </td>
+        <td>
+            <span><%=userAddress.getRemark()%></span>
+        </td>
+        <td align="right">
+            <span><%
+                if (userAddress.getIsDefault() != 2) {
+            %><a href="<%=request.getContextPath()%>/url?act=setDefaultAddress&addressId=<%=userAddress.getId()%>">【设为默认】</a>&nbsp;&nbsp;<%
+                }else{
+                	%>（默认地址）&nbsp;&nbsp;<%
+                }
+            %><a href="#">【修改】</a>&nbsp;&nbsp;<a
+                    href="#">【删除】</a></span>
+        </td>
+    </tr>
+    <%
+             }
+        }
+    %><!--地址信息    结束-->
+    </tbody>
+</table>
+<form action="<%=request.getContextPath()%>/url" method="post">
+    <input type="hidden" name="act" value="addAddress">
+    <input type="hidden" name="id" value="<%=user.getId()%>">
+    <input type="hidden" name="loginName" value="<%=user.getLoginName()%>">
+    <input type="hidden" name="password" value="<%=user.getPassword()%>">
+    <table>
+        <tbody>
+        <!--增加地址    开始-->
+        <tr>
+            <td>
+                <span><span style="color: #f00;">*</span>&nbsp;地址：</span>
+            </td>
+            <td>
+                <span><input type="text" name="address" id="address" placeholder="最多20个字符" required
+                             maxlength="20"/></span>
+            </td>
+            <td>
+                <span>备注：</span>
+            </td>
+            <td>
+                <span><input type="text" name="remark" id="remark" placeholder="最多20个字符" maxlength="18"/></span>
+            </td>
+            <td>
+                <span><input type="submit" value="添加地址"></span>
+            </td>
+        </tr>
+        <!--增加地址    结束-->
+        </tbody>
+    </table>
+</form>
+<!-- 收货地址    结束 -->
 </body>
 </html>

@@ -73,6 +73,11 @@
                 <td class="rl_td_err"><span id="password_msg"></span></td>
             </tr>
             <!--密码    E-->
+            <!--附选项    S-->
+            <tr height="35">
+                <td class="rl_td_spn" colspan="3"><a href="#">【忘记密码】</a></td>
+            </tr>
+            <!--附选项    E-->
             <!--递交按钮    S-->
             <tr height="60">
                 <td class="rl_td_btn" colspan="2"><input class="rl_btn"

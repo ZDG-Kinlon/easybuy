@@ -31,27 +31,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(int id, String userId, String loginName, String userAddress, Date createTime, double cost, int status, int type, String serialNumber) {
-        this.id = id;
-        this.userId = userId;
-        this.loginName = loginName;
-        this.userAddress = userAddress;
-        this.createTime = createTime;
-        this.cost = cost;
-        this.status = status;
-        this.type = type;
-        this.serialNumber = serialNumber;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.userId == null) {
+        if (this.userId == null) {
             return false;
         } else if (this.loginName ==null) {
             return false;

@@ -22,15 +22,6 @@ public class OrderDetail {
 
     //构造方法
     public OrderDetail() {
-
-    }
-
-    public OrderDetail(int id, int orderId, int productId, int quantity, double cost) {
-        this.id = id;
-        this.orderId = orderId;
-        this.productId = productId;
-        this.quantity = quantity;
-        this.cost = cost;
     }
 
     /**
@@ -39,9 +30,7 @@ public class OrderDetail {
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.orderId == 0) {
+        if (this.orderId == 0) {
             return false;
         } else if (this.productId == 0) {
             return false;

@@ -22,22 +22,13 @@ public class ProductCategory {
     public ProductCategory() {
     }
 
-    public ProductCategory(int id, String name, int parentId, int type) {
-        this.id = id;
-        this.name = name;
-        this.parentId = parentId;
-        this.type = type;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.name == null) {
+        if (this.name == null) {
             return false;
         } else if (this.parentId == 0) {
             return false;

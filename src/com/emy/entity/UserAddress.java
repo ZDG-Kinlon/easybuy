@@ -5,6 +5,7 @@ import java.util.Date;
 
 /**
  * 易买网-用户地址类
+ *
  * @author Kinlon
  * @version 1.0.0
  */
@@ -14,7 +15,7 @@ public class UserAddress {
     //地址
     private String address;
     //创建时间
-    private Date createTime;
+    private String createTime;
     //用户主键
     private int userId;
     //默认地址
@@ -25,23 +26,13 @@ public class UserAddress {
     public UserAddress() {
     }
 
-    public UserAddress(int id, String address, Date createTime, int userID, int isDefault) {
-        this.id = id;
-        this.address = address;
-        this.createTime = createTime;
-        this.userId = userID;
-        this.isDefault = isDefault;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.address == null) {
+        if (this.address == null) {
             return false;
         } else if (this.createTime == null) {
             return false;
@@ -72,11 +63,11 @@ public class UserAddress {
         this.address = address;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

@@ -33,26 +33,13 @@ public class Product {
     public Product() {
     }
 
-    //构造方法
-    public Product(int id, String name, double price, int stock, int categoryLevel1, String fileName, int isDelete) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.categoryLevel1 = categoryLevel1;
-        this.fileName = fileName;
-        this.isDelete = isDelete;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.name == null) {
+        if (this.name == null) {
             return false;
         } else if (this.categoryLevel1 == 0) {
             return false;

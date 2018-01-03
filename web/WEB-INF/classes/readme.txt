@@ -54,9 +54,11 @@ src:.
 │  │  │      
 │  │  ├─service        业务处理包
 │  │  │  │  Method_url.java        url关键字的请求业务处理接口类
+│  │  │  │  Service.java        后台请求业务处理接口类
 │  │  │  │  
 │  │  │  └─impl
 │  │  │          MethodImpl_url.java        url关键字的请求业务处理实现类
+│  │  │          ServiceImpl.java        后台请求业务处理实现类
 │  │  │          
 │  │  ├─servlet        前后台页面请求任务分发包
 │  │  │      Servlet_url.java        url关键字的请求业务分发类

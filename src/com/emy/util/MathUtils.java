@@ -15,8 +15,7 @@ public class MathUtils {
      * @return 整数，不能转换默认为0
      */
     public static int stringToInteger(String num) {
-        Log.logToConsole("输出",num);
-        if (num == null) {
+          if (num == null) {
             return 0;
         } else if (RegexUtils.isInteger(num)) {
             return Integer.parseInt(num);

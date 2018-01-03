@@ -78,7 +78,8 @@ public class UserAddressDaoImpl
                 obj.getCreateTime(),
                 obj.getUserId(),
                 obj.getIsDefault(),
-                obj.getRemark());
+                obj.getRemark(),
+                obj.getId());
     }
 
     /**
@@ -149,5 +150,34 @@ public class UserAddressDaoImpl
                 "FROM easybuy_user_address";
         //执行SQL语句，返回数据集合
         return runSQL.sqlQueryGetList(sql, UserAddress.class);
+    }
+
+    /**
+     * 设置默认地址
+     *
+     * @param userId 用户编号
+     * @param id     用户地址编号
+     * @return 影响的记录个数
+     */
+    @Override
+    public int setDefaultAddress(int userId, int id) {
+        int n = 0;
+        String sql = "" +
+        		"SELECT `id`,`address`,`createTime`,`userId`,`isDefault`,`remark` " +
+                "FROM easybuy_user_address " +
+                "WHERE `isDefault` = '2' AND `userId` = ?";
+        List<UserAddress> list1 = runSQL.sqlQueryGetList(sql, UserAddress.class, userId);
+        for (UserAddress i : list1) {
+            sql = "" +
+                    "UPDATE easybuy_user_address " +
+                    "SET `isDefault` = 1 " +
+                    "WHERE `id` = ?";
+            n += runSQL.sqlUpdate(sql, i.getId());
+        }
+        sql = "" +
+                "UPDATE easybuy_user_address " +
+                "SET `isDefault` = 2 " +
+                "WHERE `id` = ?";
+        return n + runSQL.sqlUpdate(sql, id);
     }
 }

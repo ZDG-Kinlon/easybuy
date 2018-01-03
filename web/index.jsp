@@ -11,7 +11,7 @@
 <html>
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -22,32 +22,40 @@
     <!--基础样式 -->
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
+    <!--主页部分    结束-->
 </head>
 <body>
 <!--欢迎信息    开始-->
-<div class="welcome">
-    <%
+<table>
+<tbody>
+<tr>
+<td>
+ <%
     User user = (User) session.getAttribute("user");
     Service service = new ServiceImpl();
     if (user != null && service.checkUserPwd(user.getId(), user.getLoginName(), user.getPassword())) {
         //S    已登录
         %><!--已登录    开始-->
-    <span class="wc_span">
+    <span>
             您好，欢迎<a href="<%=request.getContextPath()%>/user.jsp">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
-            href="<%=request.getContextPath()%>/url?act=logout&sessionId=<%=session.getId()%>&loginName=<%=user.getLoginName()%>&password=<%=user.getPassword()%>">【退出】</a>
+            href="<%=request.getContextPath()%>/url?act=logout">【退出】</a>
         </span>
     <!--已登录    结束--><%
         //E    已登录
     } else {
         //S    没有登录
         %><!--没有登录    开始-->
-    <span class="wc_span">
-            还没加入我们？<a href="<%=request.getContextPath()%>regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a href="login.jsp">【登录】</a>
+    <span>
+            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a href="login.jsp">【登录】</a>
         </span>
     <!--没有登录    结束--><%
         //E    没有登录
     }
-%></div>
+%>
+</td>
+</tr>   
+</tbody>
+</table>
 <!--欢迎信息    结束-->
 
 

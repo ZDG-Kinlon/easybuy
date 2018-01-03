@@ -15,7 +15,9 @@ public class Log {
                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date()) + " [" +
                         logType + "] " + logInfo
         );
-
+    }
+    public static String getTimeByFormat(String format){
+        return new SimpleDateFormat(format).format(new Date());
     }
 
 }

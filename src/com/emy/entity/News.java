@@ -23,22 +23,13 @@ public class News {
     public News() {
     }
 
-    public News(int id, String title, String content, Date creatTime) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.creatTime = creatTime;
-    }
-
     /**
      * 变量未赋值检测
      *
      * @return
      */
     public boolean check() {
-        if (this.id == 0) {
-            return false;
-        } else if (this.title == null) {
+        if (this.title == null) {
             return false;
         } else if (this.content ==null) {
             return false;

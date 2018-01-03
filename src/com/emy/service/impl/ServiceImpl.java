@@ -17,12 +17,10 @@ public class ServiceImpl
      */
     @Override
     public boolean checkUserPwd(int id, String name, String pwd) {
-        Log.logToConsole("请求", "帐号与密码检测");
-        Log.logToConsole("参数", id + "|" + name + "|" + pwd);
         if (id == 0) {        	
             return false;
         } else {
-            User user = new UserDaoImpl().getById(id);
+            User user = new UserDaoImpl().getById(id);        
             return user != null && name != null && pwd != null && user.getLoginName().equals(name)
                     && user.getPassword().equals(pwd);
         }

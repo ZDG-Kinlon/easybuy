@@ -30,6 +30,7 @@ public class RunSQL {
         this.connection = connection;
     }
 
+
     /**
      * 执行DML语句
      *
@@ -42,19 +43,11 @@ public class RunSQL {
         if (length == 0) {
             // 正常SQL语句
             try {
-                this.connection.setAutoCommit(false);// 事务递交
                 this.statement = this.connection.createStatement();
                 int result = this.statement.executeUpdate(sql);
-                this.connection.commit();// 递交事务
                 return result;
             } catch (SQLException e) {
                 e.printStackTrace();
-                try {
-                    this.connection.rollback();// 回滚
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-                ;
                 return 0;
             } finally {
                 close();
@@ -62,21 +55,13 @@ public class RunSQL {
         } else {
             // 预编译SQL语句
             try {
-                this.connection.setAutoCommit(false);// 事务递交
                 this.preparedStatement = this.connection.prepareStatement(sql);
                 while (length > 0)
                     this.preparedStatement.setObject(length, strs[length-- - 1]);
                 int result = this.preparedStatement.executeUpdate();
-                this.connection.commit();// 递交事务
                 return result;
             } catch (SQLException e) {
                 e.printStackTrace();
-                try {
-                    this.connection.rollback();// 回滚
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-                ;
                 return 0;
             } finally {
                 close();
@@ -149,7 +134,6 @@ public class RunSQL {
      * 1.resultSet
      * 2.statement
      * 3.preparedStatement
-     * 4.connection
      */
     private void close() {
         try {
@@ -159,8 +143,6 @@ public class RunSQL {
                 this.statement.close();
             if (this.preparedStatement != null)
                 this.preparedStatement.close();
-            if (this.connection != null)
-                this.connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

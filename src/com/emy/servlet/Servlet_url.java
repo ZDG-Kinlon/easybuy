@@ -1,6 +1,5 @@
 package com.emy.servlet;
 
-import com.emy.util.Log;
 import com.emy.service.impl.MethodImpl_url;
 
 import javax.servlet.ServletException;
@@ -52,7 +51,6 @@ public class Servlet_url extends HttpServlet {
         } else {
             //创建Service对象，处理操作
             MethodImpl_url act = new MethodImpl_url(method, request, response);
-            Log.logToConsole("请求", method);
             try {
                 //执行请求
                 act.run();
