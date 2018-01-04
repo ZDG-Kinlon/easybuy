@@ -1,7 +1,7 @@
 package com.emy.dao.order.impl;
 
 import com.emy.dao.order.OrderDao;
-import com.emy.dao.publicClass.PublicFunctionDao;
+import com.emy.dao.PublicFunctionDao;
 import com.emy.entity.Order;
 
 import java.util.List;

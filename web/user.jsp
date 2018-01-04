@@ -1,10 +1,10 @@
 <%@ page import="com.emy.entity.User" %>
-<%@ page import="com.emy.service.impl.ServiceImpl" %>
-<%@ page import="com.emy.service.Service" %>
 <%@ page import="com.emy.entity.UserAddress" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.emy.dao.user.UserAddressDao" %>
-<%@ page import="com.emy.dao.user.impl.UserAddressDaoImpl" %><%--
+<%@ page import="com.emy.dao.user.impl.UserAddressDaoImpl" %>
+<%@ page import="com.emy.dao.user.UserDao" %>
+<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/3
@@ -15,7 +15,7 @@
 <html>
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -31,10 +31,17 @@
 </head>
 <%
     User user = (User) session.getAttribute("user");
-    Service service = new ServiceImpl();
-    if (user == null || !service.checkUserPwd(user.getId(), user.getLoginName(), user.getPassword())) {
-        //未登录
-        user = new User();
+    if (user != null){
+        UserDao userDao = new UserDaoImpl();
+        User userD = userDao.getById(user.getId());
+        if (userD == null || !user.getPassword().equals(userD.getPassword())) {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
+        } else {
+            user = userD;
+            session.setAttribute("user", userD);
+        }
+    }else{
+        user=new User();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
@@ -70,7 +77,7 @@
     <tr>
         <td colspan="2" align="center">
             <span><a
-                    href="<%=request.getContextPath()%>/url?act=logout">【退出】</a><a
+                    href="<%=request.getContextPath()%>/url?obj=user&act=logout">【退出】</a><a
                     href="<%=request.getContextPath()%>/setUser.jsp">【修改以下信息】</a>
             </span>
         </td>
@@ -219,12 +226,12 @@
         <td align="right">
             <span><%
                 if (userAddress.getIsDefault() != 2) {
-            %><a href="<%=request.getContextPath()%>/url?act=setDefaultAddress&addressId=<%=userAddress.getId()%>">【设为默认】</a>&nbsp;&nbsp;<%
-                }else{
-                	%>（默认地址）&nbsp;&nbsp;<%
+            %><a href="<%=request.getContextPath()%>/url?obj=address&act=setDefaultAddress&addressId=<%=userAddress.getId()%>">【设为默认】</a>&nbsp;&nbsp;<%
+            } else {
+            %>（默认地址）&nbsp;&nbsp;<%
                 }
-            %><a href="#">【修改】</a>&nbsp;&nbsp;<a
-                    href="#">【删除】</a></span>
+            %><a href="<%=request.getContextPath()%>/url?obj=address&act=getAddressById&addressId=<%=userAddress.getId()%>">【修改】</a>&nbsp;&nbsp;<a
+                    href="<%=request.getContextPath()%>/url?obj=address&act=deleteAddress&addressId=<%=userAddress.getId()%>">【删除】</a></span>
         </td>
     </tr>
     <%
@@ -234,10 +241,8 @@
     </tbody>
 </table>
 <form action="<%=request.getContextPath()%>/url" method="post">
+    <input type="hidden" name="obj" value="address">
     <input type="hidden" name="act" value="addAddress">
-    <input type="hidden" name="id" value="<%=user.getId()%>">
-    <input type="hidden" name="loginName" value="<%=user.getLoginName()%>">
-    <input type="hidden" name="password" value="<%=user.getPassword()%>">
     <table>
         <tbody>
         <!--增加地址    开始-->

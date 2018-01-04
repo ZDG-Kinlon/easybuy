@@ -1,6 +1,6 @@
 package com.emy.dao.user.impl;
 
-import com.emy.dao.publicClass.PublicFunctionDao;
+import com.emy.dao.PublicFunctionDao;
 import com.emy.dao.user.UserDao;
 import com.emy.entity.User;
 

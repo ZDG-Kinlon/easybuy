@@ -1,7 +1,7 @@
 package com.emy.dao.product.impl;
 
 import com.emy.dao.product.ProductCategoryDao;
-import com.emy.dao.publicClass.PublicFunctionDao;
+import com.emy.dao.PublicFunctionDao;
 import com.emy.entity.ProductCategory;
 
 import java.util.List;

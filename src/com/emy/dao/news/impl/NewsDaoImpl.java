@@ -1,7 +1,7 @@
 package com.emy.dao.news.impl;
 
 import com.emy.dao.news.NewsDao;
-import com.emy.dao.publicClass.PublicFunctionDao;
+import com.emy.dao.PublicFunctionDao;
 import com.emy.entity.News;
 
 import java.util.List;

@@ -56,7 +56,7 @@ public class UserAddress {
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {

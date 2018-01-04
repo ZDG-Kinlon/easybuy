@@ -9,7 +9,7 @@
 <html>
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -27,6 +27,7 @@
 <div class="reg_div">
     <form class="reg_form" action="<%=request.getContextPath()%>/url" method="post">
         <!--页面功能标记    S-->
+        <input type="hidden" name="obj" value="user"/>
         <input type="hidden" name="act" value="regist"/>
         <!--页面功能标记    S-->
         <table class="rl_table" border="0" cellspacing="0" cellpadding="0">

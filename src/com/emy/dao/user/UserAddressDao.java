@@ -1,6 +1,6 @@
 package com.emy.dao.user;
 
-import com.emy.dao.publicClass.PublicDao;
+import com.emy.dao.PublicDao;
 import com.emy.entity.UserAddress;
 
 /**

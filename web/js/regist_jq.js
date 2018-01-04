@@ -1,11 +1,11 @@
 /**
- * æ³¨å†Œé¡µé¢JQueryè„šæœ¬
+ * ×¢²áÒ³ÃæJQuery½Å±¾
  * @author Kinlon
  * @version 1.0.0
  */
 $(function () {
-    //S    åŒæ„æ¡æ¬¾
-    //é€’äº¤æŒ‰é’®åˆè¯†åŒ–
+    //S    Í¬ÒâÌõ¿î
+    //µİ½»°´Å¥³õÊ¶»¯
     if ($(this).prop("checked")) {
         $("#reg_btn").prop("disabled", false);
     } else {
@@ -18,9 +18,9 @@ $(function () {
             $("#reg_btn").prop("disabled", true);
         }
     });
-    //E    åŒæ„æ¡æ¬¾
+    //E    Í¬ÒâÌõ¿î
 
-    //S    èº«ä»½è¯æ£€æµ‹
+    //S    Éí·İÖ¤¼ì²â
     $("#identityCode").focus(function () {
         $("#identityCode_msg").text("");
     });
@@ -28,14 +28,14 @@ $(function () {
         var card = $(this).val().toLowerCase();
         var reg = /(^\d{18}$)|(^\d{17}(\d|x)$)/;
         if (reg.test(card) === false) {
-            $("#identityCode_msg").text("è¾“å…¥æœ‰è¯¯");
+            $("#identityCode_msg").text("ÊäÈëÓĞÎó");
         } else {
             $("#identityCode_msg").text("");
         }
     });
-    //E    èº«ä»½è¯æ£€æµ‹
+    //E    Éí·İÖ¤¼ì²â
 
-    //S    æ‰‹æœºå·æ£€æµ‹
+    //S    ÊÖ»úºÅ¼ì²â
     $("#mobile").focus(function () {
         $("#mobile_msg").text("");
     });
@@ -43,14 +43,14 @@ $(function () {
         var card = $(this).val().toLowerCase();
         var reg = /^\d{11}$/;
         if (reg.test(card) === false) {
-            $("#mobile_msg").text("è¾“å…¥æœ‰è¯¯");
+            $("#mobile_msg").text("ÊäÈëÓĞÎó");
         } else {
             $("#mobile_msg").text("");
         }
     });
-    //E    æ‰‹æœºå·æ£€æµ‹
+    //E    ÊÖ»úºÅ¼ì²â
 
-    //S    äºŒæ¬¡å¯†ç éªŒè¯
+    //S    ¶ş´ÎÃÜÂëÑéÖ¤
     $("#password").focus(function () {
         $("#passwordRe_msg").text("");
     });
@@ -58,58 +58,58 @@ $(function () {
         $("#passwordRe_msg").text("");
     });
     $("#passwordRe").blur(function () {
-        //1.è·å–è¡¨å•å¯†ç æ¡†çš„ä¿¡æ¯
+        //1.»ñÈ¡±íµ¥ÃÜÂë¿òµÄĞÅÏ¢
         var $pwd = $(":password");
-        //2.éç©ºéªŒè¯
+        //2.·Ç¿ÕÑéÖ¤
         if ($pwd.eq(0).val().trim() === "" || $pwd.eq(1).val().trim() === "") {
-            //æ¶ˆæ¯æç¤º
-            $("#passwordRe_msg").text("å¯†ç ä¸ºç©º");
+            //ÏûÏ¢ÌáÊ¾
+            $("#passwordRe_msg").text("ÃÜÂëÎª¿Õ");
         } else {
-            //3.å¯†ç åŠ å¯†å¹¶æ¯”è¾ƒ
+            //3.ÃÜÂë¼ÓÃÜ²¢±È½Ï
             var pwdE = MD5($pwd.eq(0).val().trim());
             if (pwdE === MD5($pwd.eq(1).val().trim())) {
-                //å†™å…¥åŠ å¯†åçš„å¯†ç 
+                //Ğ´Èë¼ÓÃÜºóµÄÃÜÂë
                 $("#passwordHide").val(pwdE);
                 console.log(pwdE);
                 $("#passwordRe_msg").text("");
             } else {
-                //æ¶ˆæ¯æç¤º
-                $("#passwordRe_msg").text("å¯†ç ä¸ä¸€è‡´");
-                //é‡ç½®å¯†ç æ¡†
+                //ÏûÏ¢ÌáÊ¾
+                $("#passwordRe_msg").text("ÃÜÂë²»Ò»ÖÂ");
+                //ÖØÖÃÃÜÂë¿ò
                 $pwd.eq(0).val("");
                 $pwd.eq(1).val("");
             }
         }
     });
-    //E    äºŒæ¬¡å¯†ç éªŒè¯
-    //S    å¸å·å­˜åœ¨æ€§åˆ¤æ–­
+    //E    ¶ş´ÎÃÜÂëÑéÖ¤
+    //S    ÕÊºÅ´æÔÚĞÔÅĞ¶Ï
     $("#loginName").focus(function () {
         $("#loginName_msg").text("");
     });
 
     $("#loginName").blur(function () {
-        //1.è·å–ç”¨æˆ·å
+        //1.»ñÈ¡ÓÃ»§Ãû
         var loginName = $(this).val().trim();
-        //2.ä½¿ç”¨JQueryå¼‚æ­¥äº¤äº’
+        //2.Ê¹ÓÃJQueryÒì²½½»»¥
         $.ajax({
-            url: "url?act=registCheckLoginName",
+            url: "url?obj=user&act=registCheckLoginName",
             data: {"loginName": loginName},
             dataType: "text",
             type: "get",
             success: function (data) {
-                //3.æ¶ˆæ¯æç¤º
+                //3.ÏûÏ¢ÌáÊ¾
                 var str;
                 switch (data) {                
                     case "0":
-                        str = "å¯ä»¥ä½¿ç”¨";
+                        str = "¿ÉÒÔÊ¹ÓÃ";
                         $("#loginNameHide").val($("#loginName").val());
                         break;
                     case "1":
-                        str = "å·²ç»å­˜åœ¨";
+                        str = "ÒÑ¾­´æÔÚ";
                         $("#loginNameHide").val("");
                         break;
                     default:
-                        str = "æ£€æµ‹å¼‚å¸¸";
+                        str = "¼ì²âÒì³£";
                         $("#loginNameHide").val("");
                         break;
                 }
@@ -117,6 +117,6 @@ $(function () {
             }
         });
     });
-    //E    å¸å·å­˜åœ¨æ€§åˆ¤æ–­
+    //E    ÕÊºÅ´æÔÚĞÔÅĞ¶Ï
 
 });

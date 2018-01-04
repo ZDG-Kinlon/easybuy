@@ -1,6 +1,6 @@
 <%@ page import="com.emy.entity.User" %>
-<%@ page import="com.emy.service.impl.ServiceImpl" %>
-<%@ page import="com.emy.service.Service" %><%--
+<%@ page import="com.emy.dao.user.UserDao" %>
+<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/3
@@ -11,7 +11,7 @@
 <html>
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -27,10 +27,17 @@
 </head>
 <%
     User user = (User) session.getAttribute("user");
-    Service service = new ServiceImpl();
-    if (user == null || !service.checkUserPwd(user.getId(), user.getLoginName(), user.getPassword())) {
-        //未登录，直接跳转到登录页
-        user = new User();
+    if (user!=null){
+        UserDao userDao = new UserDaoImpl();
+        User userD = userDao.getById(user.getId());
+        if (userD == null || !user.getPassword().equals(userD.getPassword())) {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
+        } else {
+            user = userD;
+            session.setAttribute("user", userD);
+        }
+    } else{
+        user=new User();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
@@ -38,6 +45,7 @@
 <div class="reg_div">
     <form class="reg_form" action="<%=request.getContextPath()%>/url" method="post">
         <!--页面功能标记    S-->
+        <input type="hidden" name="obj" value="user"/>
         <input type="hidden" name="act" value="setUser"/>
         <!--页面功能标记    S-->
         <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
@@ -52,7 +60,6 @@
             <!--页面跳转导航    E-->
             <!--标题    S-->
             <tr height="35" valign="top">
-                <input type="hidden" name="id" value="<%=user.getId()%>">
                 <td colspan="3">
                     <span class="rl_span_title">修改用户信息<input
                             type="hidden" name="loginName" value="<%=user.getLoginName()%>"><input
@@ -83,8 +90,10 @@
             <tr height="35">
                 <td class="rl_td_spn">性别</td>
                 <td class="rl_td_inp">
-                    <input class="rl_radio" type="radio" name="sex" value="1" <%if(user.getSex()==1)out.print("checked");%>><span>男</span><input
-                        class="rl_radio" type="radio" name="sex" value="2" <%if(user.getSex()==2)out.print("checked");%>><span>女</span></td>
+                    <input class="rl_radio" type="radio" name="sex"
+                           value="1" <%if(user.getSex()==1)out.print("checked");%>><span>男</span><input
+                        class="rl_radio" type="radio" name="sex"
+                        value="2" <%if(user.getSex()==2)out.print("checked");%>><span>女</span></td>
                 <td class="rl_td_err"></td>
             </tr>
             <!--性别    E-->
@@ -93,7 +102,8 @@
                 <td class="rl_td_spn">身份证</td>
                 <td class="rl_td_inp"><input class="rl_input" type="text" minlength="18" maxlength="18"
                                              placeholder="18个字符"
-                                             name="identityCode" id="identityCode" value="<%=user.getIdentityCode()%>"></td>
+                                             name="identityCode" id="identityCode" value="<%=user.getIdentityCode()%>">
+                </td>
                 <td class="rl_td_err"><span id="identityCode_msg"></span></td>
             </tr>
             <!--身份证    E-->
@@ -119,8 +129,10 @@
             <!--用户类型    S-->
             <tr height="35">
                 <td class="rl_td_spn">用户类型</td>
-                <td class="rl_td_inp"><input class="rl_radio" type="radio" name="type" value="1" <%if(user.getType()==1)out.print("checked");%>><span>买家</span>
-                    <input class="rl_radio" type="radio" name="type" value="2" <%if(user.getType()==2)out.print("checked");%>><span>店家</span></td>
+                <td class="rl_td_inp"><input class="rl_radio" type="radio" name="type"
+                                             value="1" <%if(user.getType()==1)out.print("checked");%>><span>买家</span>
+                    <input class="rl_radio" type="radio" name="type"
+                           value="2" <%if(user.getType()==2)out.print("checked");%>><span>店家</span></td>
                 <td class="rl_td_err"></td>
             </tr>
             <!--用户类型    E-->

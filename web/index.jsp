@@ -1,6 +1,6 @@
-<%@ page import="com.emy.service.Service" %>
-<%@ page import="com.emy.service.impl.ServiceImpl" %>
-<%@ page import="com.emy.entity.User" %><%--
+<%@ page import="com.emy.entity.User" %>
+<%@ page import="com.emy.dao.user.UserDao" %>
+<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/2
@@ -11,7 +11,7 @@
 <html>
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -27,34 +27,49 @@
 <body>
 <!--欢迎信息    开始-->
 <table>
-<tbody>
-<tr>
-<td>
- <%
+    <tbody>
+    <tr>
+        <td>
+            <%
     User user = (User) session.getAttribute("user");
-    Service service = new ServiceImpl();
-    if (user != null && service.checkUserPwd(user.getId(), user.getLoginName(), user.getPassword())) {
-        //S    已登录
-        %><!--已登录    开始-->
-    <span>
-            您好，欢迎<a href="<%=request.getContextPath()%>/user.jsp">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
-            href="<%=request.getContextPath()%>/url?act=logout">【退出】</a>
-        </span>
-    <!--已登录    结束--><%
-        //E    已登录
-    } else {
+    if (user==null) {
+        user=new User();
         //S    没有登录
         %><!--没有登录    开始-->
-    <span>
-            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a href="login.jsp">【登录】</a>
+            <span>
+            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a
+                    href="login.jsp">【登录】</a>
         </span>
-    <!--没有登录    结束--><%
+            <!--没有登录    结束--><%
         //E    没有登录
+    }else{
+        UserDao userDao=new UserDaoImpl();
+        User userD=userDao.getById(user.getId());
+        if (userD!=null && user.getPassword().equals(userD.getPassword())){
+            //S    已登录
+            user=userD;
+            session.setAttribute("user",userD);
+            %><!--已登录    开始-->
+            <span>
+            您好，欢迎<a href="<%=request.getContextPath()%>/user.jsp">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
+                    href="<%=request.getContextPath()%>/url?obj=user&act=logout">【退出】</a>
+        </span>
+            <!--已登录    结束--><%
+            //E    已登录
+        }else{
+            //S    没有登录
+        %><!--没有登录    开始-->
+            <span>
+            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a
+                    href="login.jsp">【登录】</a>
+        </span>
+            <!--没有登录    结束--><%
+            //E    没有登录
+        }
     }
-%>
-</td>
-</tr>   
-</tbody>
+        %></td>
+    </tr>
+    </tbody>
 </table>
 <!--欢迎信息    结束-->
 

@@ -1,18 +1,18 @@
 /**
- * ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯JQueryè„šæœ¬
+ * ĞŞ¸ÄÓÃ»§ĞÅÏ¢JQuery½Å±¾
  * @author Kinlon
  * @version 1.0.0
  */
 $(function () {
-    //S    å¯†ç åŠ å¯†å¡«å…¥éšè—åŸŸ
+    //S    ÃÜÂë¼ÓÃÜÌîÈëÒş²ØÓò
     $("#password").focus(function () {
         $("#passwordNewHide").val("");
     });
     $("#password").blur(function () {
         $("#passwordNewHide").val(MD5($(this).val()));
     });
-    //E    å¯†ç åŠ å¯†å¡«å…¥éšè—åŸŸ
-    //S    èº«ä»½è¯æ£€æµ‹
+    //E    ÃÜÂë¼ÓÃÜÌîÈëÒş²ØÓò
+    //S    Éí·İÖ¤¼ì²â
     $("#identityCode").focus(function () {
         $("#identityCode_msg").text("");
     });
@@ -20,13 +20,13 @@ $(function () {
         var card = $(this).val().toLowerCase();
         var reg = /(^\d{18}$)|(^\d{17}(\d|x)$)/;
         if (reg.test(card) === false) {
-            $("#identityCode_msg").text("è¾“å…¥æœ‰è¯¯");
+            $("#identityCode_msg").text("ÊäÈëÓĞÎó");
         } else {
             $("#identityCode_msg").text("");
         }
     });
-    //E    èº«ä»½è¯æ£€æµ‹
-    //S    æ‰‹æœºå·æ£€æµ‹
+    //E    Éí·İÖ¤¼ì²â
+    //S    ÊÖ»úºÅ¼ì²â
     $("#mobile").focus(function () {
         $("#mobile_msg").text("");
     });
@@ -34,11 +34,11 @@ $(function () {
         var card = $(this).val().toLowerCase();
         var reg = /^\d{11}$/;
         if (reg.test(card) === false) {
-            $("#mobile_msg").text("è¾“å…¥æœ‰è¯¯");
+            $("#mobile_msg").text("ÊäÈëÓĞÎó");
         } else {
             $("#mobile_msg").text("");
         }
     });
-    //E    æ‰‹æœºå·æ£€æµ‹
+    //E    ÊÖ»úºÅ¼ì²â
 
 });

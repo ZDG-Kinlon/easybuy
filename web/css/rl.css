@@ -1,6 +1,6 @@
 /*
 ===================
-æ³¨å†Œå’Œç™»å½•é¡µé¢çš„åŸºæœ¬æ ·å¼
+×¢²áºÍµÇÂ¼Ò³ÃæµÄ»ù±¾ÑùÊ½
 ===================
 @author:kinlon
 @version:1.0
@@ -8,67 +8,67 @@
  */
 
 .rl_table {
-    /*å¤–å›´æ¡†*/
+    /*ÍâÎ§¿ò*/
     font-size: 14px;
     margin: 30px;
 }
 
 .rl_td_spn {
-    /*æ ‡ç­¾*/
+    /*±êÇ©*/
     width: 100px;
 }
 
 .rl_td_inp {
-    /*è¾“å…¥*/
+    /*ÊäÈë*/
     width: 200px;
 }
 
 .rl_td_err {
-    /*å¼‚å¸¸æ¶ˆæ¯*/
+    /*Òì³£ÏûÏ¢*/
     width: 200px;
 }
 
 #chk_btn {
-    /*æ¡æ¬¾åŒæ„æŒ‰é’®*/
+    /*Ìõ¿îÍ¬Òâ°´Å¥*/
     display: inline-block;
 }
 
 .rl_span_title {
-    /*æ ‡é¢˜æ ‡ç­¾*/
+    /*±êÌâ±êÇ©*/
     font-size: 24px;
     padding-left: 5px;
 }
 
 .rl_input {
-    /*è¾“å…¥æ¡†*/
+    /*ÊäÈë¿ò*/
     margin-left: 10px;
 }
 
 .rl_td_btn {
-    /*æŒ‰é’®ä½ç½®*/
+    /*°´Å¥Î»ÖÃ*/
     text-align: center;
 }
 
 .rl_btn {
-    /*é€’äº¤è¡¨å•æŒ‰é’®*/
+    /*µİ½»±íµ¥°´Å¥*/
     height: 30px;
     width: 200px;
 }
 
 .rl_radio {
-    /*å•é€‰æŒ‰é’®*/
+    /*µ¥Ñ¡°´Å¥*/
     width: 20px;
     margin-left: 30px;
 }
 
 #chk_btn {
-    /*åŒæ„æ¡æ¬¾*/
+    /*Í¬ÒâÌõ¿î*/
     width: 12px;
     vertical-align: middle;
 }
 
 .rl_btn {
-    /*é€’äº¤è¡¨å•æŒ‰é’®*/
+    /*µİ½»±íµ¥°´Å¥*/
     height: 30px;
     width: 200px;
 }

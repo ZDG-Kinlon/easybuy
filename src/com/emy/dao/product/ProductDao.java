@@ -1,6 +1,6 @@
 package com.emy.dao.product;
 
-import com.emy.dao.publicClass.PublicDao;
+import com.emy.dao.PublicDao;
 import com.emy.entity.Product;
 
 /**

@@ -1,8 +1,8 @@
 /**
- * md5绠楁硶
- * @param string 鍘熸枃
- * @returns {string} 瀵嗘枃锛堜笉鍙仮澶嶏級
- * @constructor 鍥炶皟鍑芥暟
+ * md5算法
+ * @param string 原文
+ * @returns {string} 密文（不可恢复）
+ * @constructor 回调函数
  */
 var MD5 = function (string) {
     function RotateLeft(lValue, iShiftBits) {
