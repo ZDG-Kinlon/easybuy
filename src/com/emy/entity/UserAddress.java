@@ -15,7 +15,7 @@ public class UserAddress {
     //地址
     private String address;
     //创建时间
-    private String createTime;
+    private Date createTime;
     //用户主键
     private int userId;
     //默认地址
@@ -34,11 +34,9 @@ public class UserAddress {
     public boolean check() {
         if (this.address == null) {
             return false;
-        } else if (this.createTime == null) {
-            return false;
-        } else if (this.userId == 0) {
-            return false;
-        } else if (this.isDefault == 0) {
+        } else if(this.userId==0){
+        	return false;
+        }else if (this.isDefault == 0) {
             return false;
         } else {
             return true;
@@ -63,11 +61,11 @@ public class UserAddress {
         this.address = address;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 

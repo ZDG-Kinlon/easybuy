@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-01-04 19:10:34
+Date: 2018-01-05 19:41:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,9 +23,9 @@ CREATE TABLE `easybuy_news` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '标题',
   `content` varchar(1024) COLLATE utf8_bin NOT NULL COMMENT '内容',
-  `creatTime` date NOT NULL COMMENT '录入日期',
+  `creatTime` datetime NOT NULL COMMENT '录入日期',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Table structure for easybuy_order
@@ -100,9 +100,9 @@ CREATE TABLE `easybuy_user` (
   `identityCode` varchar(18) COLLATE utf8_bin DEFAULT NULL COMMENT '身份证',
   `email` varchar(80) COLLATE utf8_bin DEFAULT NULL COMMENT '电子邮箱',
   `mobile` varchar(11) COLLATE utf8_bin DEFAULT NULL COMMENT '手机',
-  `type` int(1) NOT NULL COMMENT '1买家 2店家 3GM',
+  `type` int(1) NOT NULL COMMENT '1买家 2管理员',
   PRIMARY KEY (`id`,`loginName`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Table structure for easybuy_user_address
@@ -111,9 +111,9 @@ DROP TABLE IF EXISTS `easybuy_user_address`;
 CREATE TABLE `easybuy_user_address` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `address` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '地址',
-  `createTime` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '创建时间',
+  `createTime` datetime NOT NULL COMMENT '创建时间',
   `userId` int(10) NOT NULL COMMENT '用户主键',
   `isDefault` int(1) NOT NULL COMMENT '默认地址 1否 2是',
   `remark` varchar(18) COLLATE utf8_bin DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

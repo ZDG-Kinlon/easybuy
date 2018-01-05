@@ -26,12 +26,11 @@ public class OrderDaoImpl
         String sql = "" +
                 "INSERT INTO " +
                 "easybuy_order(`userId`,`loginName`,`userAddress`,`createTime`,`cost`,`status`,`type`,`serialNumber`) " +
-                "VALUES(?,?,?,?,?,?,?,?)";
+                "VALUES(?,?,?,NOW(),?,?,?,?)";
         return runSQL.sqlUpdate(sql,
                 obj.getUserId(),
                 obj.getLoginName(),
                 obj.getUserAddress(),
-                obj.getCreateTime(),
                 obj.getCost(),
                 obj.getStatus(),
                 obj.getType(),
@@ -74,13 +73,12 @@ public class OrderDaoImpl
     public int set(Order obj) {
         String sql = "" +
                 "UPDATE easybuy_order " +
-                "SET `userId`=?,`loginName`=?,`userAddress`=?,`createTime`=?,`cost`=?,`status`=?,`type`=?,`serialNumber`=? " +
+                "SET `userId`=?,`loginName`=?,`userAddress`=?,`createTime`=NOW(),`cost`=?,`status`=?,`type`=?,`serialNumber`=? " +
                 "WHERE `id`= ?";
         return runSQL.sqlUpdate(sql,
                 obj.getUserId(),
                 obj.getLoginName(),
                 obj.getUserAddress(),
-                obj.getCreateTime(),
                 obj.getCost(),
                 obj.getStatus(),
                 obj.getType(),

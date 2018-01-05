@@ -28,11 +28,10 @@ public class NewsDaoImpl
         String sql = "" +
                 "INSERT INTO " +
                 "easybuy_news(`title`,`content`,`creatTime`) " +
-                "VALUES(?,?,?)";
+                "VALUES(?,?,NOW())";
         return runSQL.sqlUpdate(sql,
                 obj.getTitle(),
-                obj.getContent(),
-                obj.getCreatTime());
+                obj.getContent());
     }
 
 
@@ -73,12 +72,11 @@ public class NewsDaoImpl
     public int set(News obj) {
         String sql = "" +
                 "UPDATE easybuy_news " +
-                "SET `title`=?,`content`=?,`creatTime`=? " +
+                "SET `title`=?,`content`=?,`creatTime`= NOW() " +
                 "WHERE `id`= ?";
         return runSQL.sqlUpdate(sql,
                 obj.getTitle(),
                 obj.getContent(),
-                obj.getCreatTime(),
                 obj.getId());
     }
 

@@ -77,7 +77,7 @@
             <!--密码    E-->
             <!--附选项    S-->
             <tr height="35">
-                <td class="rl_td_spn" colspan="3"><a href="#">【忘记密码】</a></td>
+                <td class="rl_td_spn" colspan="3"><a href="#">【忘记密码(施工中...)】</a></td>
             </tr>
             <!--附选项    E-->
             <!--递交按钮    S-->
@@ -94,7 +94,23 @@
 <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
 <!--JQuery脚本集    开始-->
 <script src="js/md5.js" type="text/javascript"></script>
-<script src="js/login_jq.js" type="text/javascript"></script>
+<script type="text/javascript">
+    /**
+     * 登录页面JQuery脚本
+     * @author Kinlon
+     * @version 1.0.0
+     */
+    $(function() {
+        //S    密码加密
+        $("#password").blur(function() {
+            $("#passwordHide").val(MD5($(this).val()));
+        });
+        $("#password").keyup(function() {
+            $("#passwordHide").val(MD5($(this).val()));
+        });
+//E    密码加密
+    });
+</script>
 <!--JQuery脚本集    结束-->
 </body>
 </html>

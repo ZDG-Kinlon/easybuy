@@ -3,6 +3,8 @@ package com.emy.entity;
 
 import java.util.Date;
 
+import com.emy.util.Log;
+
 /**
  * 易买网-资讯类
  *
@@ -32,8 +34,6 @@ public class News {
         if (this.title == null) {
             return false;
         } else if (this.content ==null) {
-            return false;
-        } else if (this.creatTime == null) {
             return false;
         } else {
             return true;

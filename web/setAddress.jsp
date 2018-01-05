@@ -86,7 +86,7 @@
                 <span>备注：</span>
             </td>
             <td class="rl_td_inp">
-                <span><input type="text" name="remark" id="remark" placeholder="最多20个字符" maxlength="18"
+                <span><input type="text" name="remark" id="remark" placeholder="最多18个字符" maxlength="18"
                              value="<%=userAddress.getRemark()%>"/></span>
             </td>
         </tr>

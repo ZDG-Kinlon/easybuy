@@ -4,7 +4,8 @@
 <%@ page import="com.emy.dao.user.UserAddressDao" %>
 <%@ page import="com.emy.dao.user.impl.UserAddressDaoImpl" %>
 <%@ page import="com.emy.dao.user.UserDao" %>
-<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %><%--
+<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/3
@@ -47,25 +48,34 @@
 %>
 <!-- 导航链接    开始 -->
 <body>
-<table border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0" >
     <tbody>
     <tr>
         <td>
-            <a href="<%=request.getContextPath()%>">【返回首页】</a>&nbsp;&nbsp;
+            <a href="<%=request.getContextPath()%>/index.jsp">【返回首页】</a>&nbsp;&nbsp;
         </td>
+        <%
+            if(user.getType()==2){
+        %>
+        <td>
+            <a href="<%=request.getContextPath()%>/manager.jsp">【进入管理中心】</a>&nbsp;&nbsp;
+        </td>
+        <%
+            }
+        %>
     </tr>
     </tbody>
 </table>
-<!-- 导航链接    结束 -->
 <br/>
+<!-- 导航链接    结束 -->
 <!-- 用户信息    开始 -->
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1" cellspacing="0" cellpadding="0" >
+    <thead>
+    <td colspan="2" align="center">
+        <span>====用户信息====</span>
+    </td>
+    </thead>
     <tbody>
-    <tr>
-        <td colspan="2" align="center">
-            <span>====用户信息====</span>
-        </td>
-    </tr>
     <tr>
         <td>
             <span>帐号</span>
@@ -94,9 +104,6 @@
                              out.print("买家");
                              break;
                          case 2:
-                             out.print("店家");
-                             break;
-                         case 3:
                              out.print("管理员");
                              break;
                          default:
@@ -179,16 +186,16 @@
     </tr>
     </tbody>
 </table>
-<!-- 用户信息    结束 -->
 <br/>
+<!-- 用户信息    结束 -->
 <!-- 收货地址    开始 -->
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1" cellspacing="0" cellpadding="0" >
+    <thead>
+    <td colspan="4" align="center">
+        <span>====收货地址====</span>
+    </td>
+    </thead>
     <tbody>
-    <tr>
-        <td colspan="4" align="center">
-            <span>====收货地址====</span>
-        </td>
-    </tr>
     <!--标题    开始-->
     <tr>
         <td align="center">
@@ -215,7 +222,7 @@
     %>
     <tr>
         <td>
-            <span><%=userAddress.getCreateTime()%></span>
+            <span><%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(userAddress.getCreateTime())%></span>
         </td>
         <td>
             <span><%=userAddress.getAddress()%></span>
@@ -268,6 +275,7 @@
         </tbody>
     </table>
 </form>
+<br/>
 <!-- 收货地址    结束 -->
 </body>
 </html>

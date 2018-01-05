@@ -9,6 +9,7 @@ import com.emy.util.MathUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 
 /**
  * 收货地址业务的请求实现类
@@ -17,14 +18,14 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0.0
  */
 public class ServiceAddressImpl
-        extends PublicFunction
+        extends PublicService
         implements ServiceAddress {
-    private String actice;
+    private String active;
     private UserAddress userAddress=null;
     private UserAddressDao userAddressDao = new UserAddressDaoImpl();
 
-    public String getActice() {
-        return actice;
+    public String getActive() {
+        return active;
     }
 
     /**
@@ -34,7 +35,7 @@ public class ServiceAddressImpl
      */
     public ServiceAddressImpl(String functions, HttpServletRequest req, HttpServletResponse res) {
         super(req,res);
-        this.actice = functions;
+        this.active = functions;
         this.req = req;
         this.res = res;
     }
@@ -76,11 +77,15 @@ public class ServiceAddressImpl
                     //修改备注
                     value = getStr("remark");
                     if (value != null) userAddress.setRemark(value);
-                    this.userAddress.setCreateTime(Log.getTimeByFormat("yyyy-MM-dd HH:mm:ss"));
-                    //更新
-                    this.userAddressDao.set(this.userAddress);
-                    toPage("user.jsp");
-                    Log.logToConsole("结果", "修改成功");
+                    if(this.userAddress.check()){
+                    	 //更新
+                        this.userAddressDao.set(this.userAddress);
+                        toPage("user.jsp");
+                        Log.logToConsole("结果", "修改成功");
+                    }else{
+                        toInfoPage("参数异常");
+                        Log.logToConsole("结果", "修改失败");
+                    }                   
                 }else{
                     toInfoPage("修改的地址不属于当前用户");
                     Log.logToConsole("结果", "修改失败");
@@ -165,7 +170,6 @@ public class ServiceAddressImpl
                 Log.logToConsole("请求", "添加收货地址");
                 UserAddress userAddress = new UserAddress();
                 userAddress.setAddress(getStr("address"));
-                userAddress.setCreateTime(Log.getTimeByFormat("yyyy-MM-dd HH:mm:ss"));
                 userAddress.setUserId(this.user.getId());
                 userAddress.setIsDefault(1);
                 userAddress.setRemark(getStr("remark"));

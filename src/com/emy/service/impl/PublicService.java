@@ -18,12 +18,12 @@ import java.util.List;
  * @author Kinlon
  * @version 1.0.0
  */
-public class PublicFunction {
+public class PublicService {
     public HttpServletRequest req;
     public HttpServletResponse res;
     public User user;
 
-    public PublicFunction(HttpServletRequest req, HttpServletResponse res) {
+    public PublicService(HttpServletRequest req, HttpServletResponse res) {
         this.req = req;
         this.res = res;
     }
@@ -35,12 +35,12 @@ public class PublicFunction {
         return req.getParameter(key);
     }
 
-    public void setStr(String key, String val){
-        req.setAttribute(key,val);
+    public void setStr(String key, String val) {
+        req.setAttribute(key, val);
     }
 
-    public Object getObj(String key){
-        return  req.getAttribute(key);
+    public Object getObj(String key) {
+        return req.getAttribute(key);
     }
 
     public void setObj(String key, Object obj) {
@@ -57,8 +57,8 @@ public class PublicFunction {
     /**
      * 转发至页面
      *
-     * @param tag      消息键
-     * @param msg      消息值
+     * @param tag 消息键
+     * @param msg 消息值
      */
     public void rePage(String tag, String msg) {
         try {
@@ -82,8 +82,8 @@ public class PublicFunction {
             e.printStackTrace();
         }
     }
-    
-    public void rePageObj(String url,String key,Object obj){
+
+    public void rePageObj(String url, String key, Object obj) {
         try {
             this.req.setAttribute(key, obj);
             this.req.getRequestDispatcher(url).forward(this.req, this.res);
@@ -107,7 +107,7 @@ public class PublicFunction {
      * @param msg      输出消息
      */
     public void toInfoPage(String msg) {
-    	rePageObj("infoPage.jsp","msg",(String)msg);        
+        rePageObj("infoPage.jsp", "msg", (String) msg);
     }
     //=========================================
     //页面动作    结束
@@ -145,6 +145,28 @@ public class PublicFunction {
             //帐号不存在
         }
     }
+
+    /**
+     * 判断用户是否为管理员，必须前置至判断登录或密码检测
+     *
+     * @return 0是，1不是，2缺前置执行任务
+     */
+    public int checkIsAdmin() {
+        Log.logToConsole("执行", "管理员检测");
+        if (this.user != null) {
+            if (this.user.getType() == 2) {
+                //管理员
+                Log.logToConsole("结果", this.user.getLoginName() + "是管理员");
+                return 0;
+            } else {
+                Log.logToConsole("结果", this.user.getLoginName() + "是买家");
+                return 1;
+            }
+        }else{
+            return 2;
+        }
+    }
+
 
     /**
      * 判断用户已经登录且登录信息正确

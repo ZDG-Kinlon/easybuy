@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/web/css/html.css" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/css/rl.css" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/js/jbase64.js" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/js/login_jq.js" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/js/md5.js" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/js/regist_jq.js" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/web/js/setUser_jq.js" charset="GB2312" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

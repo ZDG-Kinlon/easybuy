@@ -26,10 +26,9 @@ public class UserAddressDaoImpl
         String sql = "" +
                 "INSERT INTO " +
                 "easybuy_user_address(`address`,`createTime`,`userId`,`isDefault`,`remark`) " +
-                "VALUES(?,?,?,?,?)";
+                "VALUES(?,NOW(),?,?,?)";
         return runSQL.sqlUpdate(sql,
                 obj.getAddress(),
-                obj.getCreateTime(),
                 obj.getUserId(),
                 obj.getIsDefault(),
                 obj.getRemark());
@@ -71,11 +70,10 @@ public class UserAddressDaoImpl
     public int set(UserAddress obj) {
         String sql = "" +
                 "UPDATE easybuy_user_address " +
-                "SET `address`=?,`createTime`=?,`userId`=?,`isDefault`=?,`remark`=? " +
+                "SET `address`=?,`createTime`=NOW(),`userId`=?,`isDefault`=?,`remark`=? " +
                 "WHERE `id` = ?";
         return runSQL.sqlUpdate(sql,
                 obj.getAddress(),
-                obj.getCreateTime(),
                 obj.getUserId(),
                 obj.getIsDefault(),
                 obj.getRemark(),

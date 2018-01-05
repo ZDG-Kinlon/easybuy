@@ -132,7 +132,7 @@
                 <td class="rl_td_inp"><input class="rl_radio" type="radio" name="type"
                                              value="1" <%if(user.getType()==1)out.print("checked");%>><span>买家</span>
                     <input class="rl_radio" type="radio" name="type"
-                           value="2" <%if(user.getType()==2)out.print("checked");%>><span>店家</span></td>
+                           value="2" <%if(user.getType()==2)out.print("checked");%>><span>管理员</span></td>
                 <td class="rl_td_err"></td>
             </tr>
             <!--用户类型    E-->
@@ -150,7 +150,52 @@
     <!--JQuery脚本    S-->
     <script charset="utf-8" type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script charset="utf-8" type="text/javascript" src="js/md5.js"></script>
-    <script charset="utf-8" type="text/javascript" src="js/setUser_jq.js"></script>
+    <script charset="utf-8" type="text/javascript">
+        /**
+         * 修改用户信息JQuery脚本
+         * @author Kinlon
+         * @version 1.0.0
+         */
+        $(function () {
+            //S    密码加密填入隐藏域
+            $("#password").focus(function () {
+                $("#passwordNewHide").val("");
+            });
+            $("#password").blur(function () {
+                $("#passwordNewHide").val(MD5($(this).val()));
+            });
+            //E    密码加密填入隐藏域
+            //S    身份证检测
+            $("#identityCode").focus(function () {
+                $("#identityCode_msg").text("");
+            });
+            $("#identityCode").blur(function () {
+                var card = $(this).val().toLowerCase();
+                var reg = /(^\d{18}$)|(^\d{17}(\d|x)$)/;
+                if (reg.test(card) === false) {
+                    $("#identityCode_msg").text("输入有误");
+                } else {
+                    $("#identityCode_msg").text("");
+                }
+            });
+            //E    身份证检测
+            //S    手机号检测
+            $("#mobile").focus(function () {
+                $("#mobile_msg").text("");
+            });
+            $("#mobile").blur(function () {
+                var card = $(this).val().toLowerCase();
+                var reg = /^\d{11}$/;
+                if (reg.test(card) === false) {
+                    $("#mobile_msg").text("输入有误");
+                } else {
+                    $("#mobile_msg").text("");
+                }
+            });
+            //E    手机号检测
+
+        });
+    </script>
     <!--JQuery脚本    E-->
 </div>
 </body>

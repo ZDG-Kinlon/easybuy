@@ -21,17 +21,17 @@ import java.io.PrintWriter;
  * @version 1.0.0
  */
 public class ServiceUserImpl
-        extends PublicFunction
+        extends PublicService
         implements ServiceUser {
-    private String actice;
+    private String active;
     private UserDao userDao = new UserDaoImpl();
 
-    public String getActice() {
-        return actice;
+    public String getActive() {
+        return active;
     }
 
-    public void setActice(String actice) {
-        this.actice = actice;
+    public void setActive(String active) {
+        this.active = active;
     }
 
     /**
@@ -41,7 +41,7 @@ public class ServiceUserImpl
      */
     public ServiceUserImpl(String functions, HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
-        this.actice = functions;
+        this.active = functions;
         this.req = req;
         this.res = res;
     }

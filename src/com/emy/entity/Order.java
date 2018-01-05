@@ -43,9 +43,7 @@ public class Order {
             return false;
         } else if (this.userAddress == null) {
             return false;
-        } else if (this.createTime == null) {
-            return false;
-        } else if (this.cost == 0.0) {
+        }  else if (this.cost == 0.0) {
             return false;
         } else if (this.status == 0) {
             return false;
