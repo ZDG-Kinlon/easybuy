@@ -22,6 +22,7 @@ public class PublicService {
     public HttpServletRequest req;
     public HttpServletResponse res;
     public User user;
+    public UserDao userDao = new UserDaoImpl();
 
     public PublicService(HttpServletRequest req, HttpServletResponse res) {
         this.req = req;
@@ -72,7 +73,6 @@ public class PublicService {
     /**
      * 页面跳转
      *
-     * @param response 响应
      * @param url      页面地址
      */
     public void toPage(String url) {
@@ -83,6 +83,12 @@ public class PublicService {
         }
     }
 
+    /**
+     * 页面跳转，附带对象
+     * @param url    页面地址
+     * @param key    键
+     * @param obj    对象
+     */
     public void rePageObj(String url, String key, Object obj) {
         try {
             this.req.setAttribute(key, obj);
@@ -102,12 +108,10 @@ public class PublicService {
     /**
      * 输出信息到页面显示
      *
-     * @param request
-     * @param response
      * @param msg      输出消息
      */
     public void toInfoPage(String msg) {
-        rePageObj("infoPage.jsp", "msg", (String) msg);
+        rePageObj("infoPage.jsp", "msg", msg);
     }
     //=========================================
     //页面动作    结束
@@ -116,6 +120,37 @@ public class PublicService {
     //=========================================
     //账户有效性检测    开始
     //=========================================
+    /**
+     * 判断用户已经登录且登录信息正确
+     *
+     * @return 0正常
+     */
+    public int checkIsLogin() {
+        Log.logToConsole("执行", "登录检测");
+        //1.获取数据
+        HttpSession session = req.getSession();
+        User sUser = (User) session.getAttribute("user");
+        if (sUser == null) {
+            Log.logToConsole("结果", "未登录");
+            return 2;//没有登录
+        } else {
+            //2.数据比对
+            String sLoginName = sUser.getLoginName();
+            String sPassword = sUser.getPassword();
+            if (checkPassword(sLoginName, sPassword) == 0) {
+                if (req.getHeader("Referer") != null) {
+                    Log.logToConsole("结果", "成功");
+                    return 0;//正常
+                } else {
+                    Log.logToConsole("结果", "直链接");
+                    return 1;//错误
+                }
+            } else {
+                Log.logToConsole("结果", "帐号或密码错误");
+                return 1;//错误
+            }
+        }
+    }
 
     /**
      * 帐号的密码正确性检测
@@ -126,8 +161,7 @@ public class PublicService {
      */
     public int checkPassword(String loginName, String password) {
         Log.logToConsole("执行", loginName + " 帐号检测");
-        UserDao userDao = new UserDaoImpl();
-        List<User> list = userDao.getByField("loginName", loginName);
+        List<User> list = this.userDao.getByField("loginName", loginName);
         if (list.size() == 1) {
             //帐号存在
             this.user = list.get(0);
@@ -164,39 +198,6 @@ public class PublicService {
             }
         }else{
             return 2;
-        }
-    }
-
-
-    /**
-     * 判断用户已经登录且登录信息正确
-     *
-     * @return 0正常
-     */
-    public int checkIsLogin() {
-        Log.logToConsole("执行", "登录检测");
-        //1.获取数据
-        HttpSession session = req.getSession();
-        User sUser = (User) session.getAttribute("user");
-        if (sUser == null) {
-            Log.logToConsole("结果", "未登录");
-            return 2;//没有登录
-        } else {
-            //2.数据比对
-            String sLoginName = sUser.getLoginName();
-            String sPassword = sUser.getPassword();
-            if (checkPassword(sLoginName, sPassword) == 0) {
-                if (req.getHeader("Referer") != null) {
-                    Log.logToConsole("结果", "成功");
-                    return 0;//正常
-                } else {
-                    Log.logToConsole("结果", "直链接");
-                    return 1;//错误
-                }
-            } else {
-                Log.logToConsole("结果", "帐号或密码错误");
-                return 1;//错误
-            }
         }
     }
     //=========================================

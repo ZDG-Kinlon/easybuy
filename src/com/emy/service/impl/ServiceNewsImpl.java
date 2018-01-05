@@ -19,22 +19,15 @@ import java.util.Date;
 public class ServiceNewsImpl
         extends PublicService
         implements ServiceNews {
-    private String active;
     private News news=new News();
     private NewsDao newsDao=new NewsDaoImpl();
 
-
-    public String getActive() {
-        return active;
-    }
-
-    public void setActive(String active) {
-        this.active = active;
-    }
-
-    public ServiceNewsImpl(String active,HttpServletRequest req, HttpServletResponse res) {
+    /**
+     * 构造方法，不允许无参数
+     *
+     */
+    public ServiceNewsImpl(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
-        this.active=active;
     }
 
     /**
@@ -47,7 +40,7 @@ public class ServiceNewsImpl
                 Log.logToConsole("请求", "添加资讯");
                 if(checkIsAdmin()==0){
                     //获取添加的资讯
-                    this.news.setTitle(getStr("titile"));
+                    this.news.setTitle(getStr("title"));
                     this.news.setContent(getStr("content"));
                     //非空检测
                     if(this.news.check()){

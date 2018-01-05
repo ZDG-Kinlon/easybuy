@@ -23,27 +23,13 @@ import java.io.PrintWriter;
 public class ServiceUserImpl
         extends PublicService
         implements ServiceUser {
-    private String active;
-    private UserDao userDao = new UserDaoImpl();
-
-    public String getActive() {
-        return active;
-    }
-
-    public void setActive(String active) {
-        this.active = active;
-    }
 
     /**
      * 构造方法，不允许无参数
      *
-     * @param functions
      */
-    public ServiceUserImpl(String functions, HttpServletRequest req, HttpServletResponse res) {
+    public ServiceUserImpl(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
-        this.active = functions;
-        this.req = req;
-        this.res = res;
     }
 
     /**

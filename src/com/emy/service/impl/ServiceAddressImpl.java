@@ -20,24 +20,15 @@ import java.util.Date;
 public class ServiceAddressImpl
         extends PublicService
         implements ServiceAddress {
-    private String active;
     private UserAddress userAddress=null;
     private UserAddressDao userAddressDao = new UserAddressDaoImpl();
-
-    public String getActive() {
-        return active;
-    }
 
     /**
      * 构造方法，不允许无参数
      *
-     * @param functions
      */
-    public ServiceAddressImpl(String functions, HttpServletRequest req, HttpServletResponse res) {
+    public ServiceAddressImpl( HttpServletRequest req, HttpServletResponse res) {
         super(req,res);
-        this.active = functions;
-        this.req = req;
-        this.res = res;
     }
 
     /**
