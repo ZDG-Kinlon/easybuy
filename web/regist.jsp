@@ -22,6 +22,10 @@
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <!--主页部分    结束-->
     <link rel="stylesheet" type="text/css" href="css/rl.css"/>
+    <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
 </head>
 <body>
 <div class="reg_div">
@@ -31,7 +35,7 @@
         <input type="hidden" name="act" value="regist"/>
         <!--页面功能标记    S-->
         <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
-            <tbody>
+            <thead>
             <!--页面跳转导航    S-->
             <tr height="35" valign="top">
                 <td colspan="3">
@@ -40,6 +44,8 @@
                 </td>
             </tr>
             <!--页面跳转导航    E-->
+            </thead>
+            <tbody>
             <!--标题    S-->
             <tr height="35" valign="top">
                 <td colspan="3">
@@ -50,7 +56,8 @@
             <!--用户名    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户名</td>
-                <td class="rl_td_inp"><input class="rl_input" type="text" id="loginName" maxlength="20"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="text" id="loginName"
+                                             maxlength="20"
                                              placeholder="最多20个字符" value=""
                                              required>
                     <input type="hidden" name="loginName" id="loginNameHide" value="" required>
@@ -61,14 +68,16 @@
             <!--密码    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span color="#f00">*</span>&nbsp;密码</td>
-                <td class="rl_td_inp"><input class="rl_input" type="password" id="password" value="" required></td>
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="password" id="password"
+                                             value="" required></td>
                 <td class="rl_td_err"><span id="password_msg"></span></td>
             </tr>
             <!--密码    E-->
             <!--密码验证    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;确认密码</td>
-                <td class="rl_td_inp"><input class="rl_input" type="password" id="passwordRe" value="" required>
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="password" id="passwordRe"
+                                             value="" required>
                     <input type="hidden" name="password" id="passwordHide" value="" required>
                 </td>
                 <td class="rl_td_err"><span id="passwordRe_msg"></span></td>
@@ -77,7 +86,8 @@
             <!--姓名    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;姓名</td>
-                <td class="rl_td_inp"><input class="rl_input" type="text" name="userName" maxlength="20"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="text" name="userName"
+                                             maxlength="20"
                                              placeholder="最多20个字符" value=""
                                              required></td>
                 <td class="rl_td_err"></td>
@@ -95,7 +105,8 @@
             <!--身份证    S-->
             <tr height="35">
                 <td class="rl_td_spn">身份证</td>
-                <td class="rl_td_inp"><input class="rl_input" type="text" minlength="18" maxlength="18"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="text" minlength="18"
+                                             maxlength="18"
                                              placeholder="18个字符"
                                              name="identityCode" id="identityCode" value=""></td>
                 <td class="rl_td_err"><span id="identityCode_msg"></span></td>
@@ -104,7 +115,8 @@
             <!--邮箱    S-->
             <tr height="35">
                 <td class="rl_td_spn">邮箱</td>
-                <td class="rl_td_inp"><input class="rl_input" type="email" name="email" maxlength="80"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="email" name="email"
+                                             maxlength="80"
                                              placeholder="最多80个字符" value="">
                 </td>
                 <td class="rl_td_err"></td>
@@ -113,7 +125,9 @@
             <!--手机号    S-->
             <tr height="35">
                 <td class="rl_td_spn">手机号</td>
-                <td class="rl_td_inp"><input class="rl_input" type="text" minlength="11" maxlength="11" placeholder="11个数字"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="text" minlength="11"
+                                             maxlength="11"
+                                             placeholder="11个数字"
                                              name="mobile" id="mobile" value="">
                 </td>
                 <td class="rl_td_err"><span id="mobile_msg"></span></td>
@@ -139,7 +153,7 @@
             <!--递交按钮    S-->
             <tr height="60">
                 <td class="rl_td_btn" colspan="2">
-                    <input class="rl_btn" id="reg_btn" type="submit" value="注册">
+                    <input class="rl_btn ui-button ui-corner-all ui-widget" id="reg_btn" type="submit" value="注册">
                 </td>
                 <td></td>
             </tr>
@@ -151,11 +165,6 @@
     <script charset="utf-8" type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script charset="utf-8" type="text/javascript" src="js/md5.js"></script>
     <script charset="utf-8" type="text/javascript">
-        /**
-         * 注册页面JQuery脚本
-         * @author Kinlon
-         * @version 1.0.0
-         */
         $(function () {
             //S    同意条款
             //递交按钮初识化
@@ -243,32 +252,34 @@
             $("#loginName").blur(function () {
                 //1.获取用户名
                 var loginName = $(this).val().trim();
-                //2.使用JQuery异步交互
-                $.ajax({
-                    url: "url?obj=user&act=registCheckLoginName",
-                    data: {"loginName": loginName},
-                    dataType: "text",
-                    type: "get",
-                    success: function (data) {
-                        //3.消息提示
-                        var str;
-                        switch (data) {
-                            case "0":
-                                str = "可以使用";
-                                $("#loginNameHide").val($("#loginName").val());
-                                break;
-                            case "1":
-                                str = "已经存在";
-                                $("#loginNameHide").val("");
-                                break;
-                            default:
-                                str = "检测异常";
-                                $("#loginNameHide").val("");
-                                break;
+                if (loginName !== "") {
+                    //2.使用JQuery异步交互
+                    $.ajax({
+                        url: "url?obj=user&act=registCheckLoginName",
+                        data: {"loginName": loginName},
+                        dataType: "text",
+                        type: "get",
+                        success: function (data) {
+                            //3.消息提示
+                            var str;
+                            switch (data) {
+                                case "0":
+                                    str = "可以使用";
+                                    $("#loginNameHide").val($("#loginName").val());
+                                    break;
+                                case "1":
+                                    str = "已经存在";
+                                    $("#loginNameHide").val("");
+                                    break;
+                                default:
+                                    str = "检测异常";
+                                    $("#loginNameHide").val("");
+                                    break;
+                            }
+                            $("#loginName_msg").text(str);
                         }
-                        $("#loginName_msg").text(str);
-                    }
-                });
+                    });
+                }
             });
             //E    帐号存在性判断
 

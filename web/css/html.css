@@ -1,20 +1,19 @@
 /*
 ===================
-ÍøÒ³ÕûÌåµÄ»ù±¾ÑùÊ½
+ç½‘é¡µæ•´ä½“çš„åŸºæœ¬æ ·å¼
 ===================
 @author:kinlon
 @version:1.0
 -------------------
  */
-html{
-    background-color: #35ff85;
-}
 
-body {
-    /*Ò³Ãæ¾ÓÖĞÏÔÊ¾*/
-    margin: 0 auto;
-}
-
-a {
+*{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
     color: #000;
+}
+
+tr {
+	height:25px;
 }

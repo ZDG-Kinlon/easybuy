@@ -24,6 +24,10 @@
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <!--主页部分    结束-->
     <link rel="stylesheet" type="text/css" href="css/rl.css"/>
+    <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
 </head>
 <body>
 <%
@@ -45,7 +49,7 @@
         <input type="hidden" name="act" value="login"/>
         <!--页面功能标记    S-->
         <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
-            <tbody>
+            <thead>
             <!--页面跳转导航    S-->
             <tr height="35" valign="top">
                 <td colspan="3"><span><a
@@ -53,6 +57,8 @@
                         href="<%=request.getContextPath()%>/regist.jsp">【帐号注册】</a></span></td>
             </tr>
             <!--页面跳转导航    E-->
+            </thead>
+            <tbody>
             <!--标题    S-->
             <tr height="35" valign="top">
                 <td colspan="3"><span class="rl_span_title">登录</span></td>
@@ -61,7 +67,8 @@
             <!--用户名    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户名</td>
-                <td class="rl_td_inp"><input class="rl_input" type="text" name="loginName" maxlength="20"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="text" name="loginName"
+                                             maxlength="20"
                                              placeholder="最多20个字符" value="" required></td>
                 <td class="rl_td_err"><span id="loginName_msg"></span></td>
             </tr>
@@ -69,7 +76,7 @@
             <!--密码    S-->
             <tr height="35">
                 <td class="rl_td_spn"><span color="#f00">*</span>&nbsp;密码</td>
-                <td class="rl_td_inp"><input class="rl_input" type="password"
+                <td class="rl_td_inp"><input class="rl_input ui-autocomplete-input" type="password"
                                              id="password" value="" required><input
                         type="hidden" name="password" id="passwordHide" value=""></td>
                 <td class="rl_td_err"><span id="password_msg"></span></td>
@@ -82,7 +89,8 @@
             <!--附选项    E-->
             <!--递交按钮    S-->
             <tr height="60">
-                <td class="rl_td_btn" colspan="2"><input class="rl_btn" id="reg_btn" type="submit" value="登录"></td>
+                <td class="rl_td_btn" colspan="2"><input class="rl_btn ui-button ui-corner-all ui-widget" id="reg_btn"
+                                                         type="submit" value="登录"></td>
                 <td></td>
             </tr>
             <!--递交按钮    E-->
@@ -100,12 +108,12 @@
      * @author Kinlon
      * @version 1.0.0
      */
-    $(function() {
+    $(function () {
         //S    密码加密
-        $("#password").blur(function() {
+        $("#password").blur(function () {
             $("#passwordHide").val(MD5($(this).val()));
         });
-        $("#password").keyup(function() {
+        $("#password").keyup(function () {
             $("#passwordHide").val(MD5($(this).val()));
         });
 //E    密码加密

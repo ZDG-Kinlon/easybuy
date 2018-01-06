@@ -13,10 +13,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html class="ui-widget">
 <head>
     <!--主页部分    开始-->
-    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico"
+          type="image/x-icon"/>
     <meta charset="UTF-8">
     <meta name="Generator" content="WebStorm 2017.3.2">
     <meta name="Keywords" content="易买网,购物">
@@ -27,12 +28,15 @@
     <!--基础样式 -->
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
-    <link rel="stylesheet" type="text/css" href="css/html.css"/>
+    <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <%
     User user = (User) session.getAttribute("user");
-    if (user != null){
+    if (user != null) {
         UserDao userDao = new UserDaoImpl();
         User userD = userDao.getById(user.getId());
         if (userD == null || !user.getPassword().equals(userD.getPassword())) {
@@ -41,21 +45,20 @@
             user = userD;
             session.setAttribute("user", userD);
         }
-    }else{
-        user=new User();
+    } else {
+        user = new User();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
 <!-- 导航链接    开始 -->
 <body>
-<table border="0" cellspacing="0" cellpadding="0" >
+<table border="0" cellspacing="0" cellpadding="0">
     <tbody>
     <tr>
-        <td>
-            <a href="<%=request.getContextPath()%>/index.jsp">【返回首页】</a>&nbsp;&nbsp;
+        <td><a href="<%=request.getContextPath()%>/index.jsp">【返回首页】</a>&nbsp;&nbsp;
         </td>
         <%
-            if(user.getType()==2){
+            if (user.getType() == 2) {
         %>
         <td>
             <a href="<%=request.getContextPath()%>/manager.jsp">【进入管理中心】</a>&nbsp;&nbsp;
@@ -69,7 +72,7 @@
 <br/>
 <!-- 导航链接    结束 -->
 <!-- 用户信息    开始 -->
-<table border="1" cellspacing="0" cellpadding="0" >
+<table border="1" cellspacing="0" cellpadding="0">
     <thead>
     <td colspan="2" align="center">
         <span>====用户信息====</span>
@@ -189,11 +192,13 @@
 <br/>
 <!-- 用户信息    结束 -->
 <!-- 收货地址    开始 -->
-<table border="1" cellspacing="0" cellpadding="0" >
+<table border="1" cellspacing="0" cellpadding="0">
     <thead>
-    <td colspan="4" align="center">
-        <span>====收货地址====</span>
-    </td>
+    <tr>
+        <td colspan="4" align="center">
+            <span>====收货地址====</span>
+        </td>
+    </tr>
     </thead>
     <tbody>
     <!--标题    开始-->
@@ -208,7 +213,8 @@
             <span>备注</span>
         </td>
         <td align="center">
-            <span>操作</span>
+            <span>操作&nbsp;&nbsp;<button id="opener_address"
+                                        class="ui-button ui-corner-all ui-widget">添加收货地址</button></span>
         </td>
     </tr>
     <!--标题    结束-->
@@ -247,35 +253,76 @@
     %><!--地址信息    结束-->
     </tbody>
 </table>
-<form action="<%=request.getContextPath()%>/url" method="post">
-    <input type="hidden" name="obj" value="address">
-    <input type="hidden" name="act" value="addAddress">
-    <table>
-        <tbody>
-        <!--增加地址    开始-->
-        <tr>
-            <td>
-                <span><span style="color: #f00;">*</span>&nbsp;地址：</span>
-            </td>
-            <td>
-                <span><input type="text" name="address" id="address" placeholder="最多20个字符" required
+<div id="dialog_address" title="添加收货地址">
+    <form action="<%=request.getContextPath()%>/url" method="post">
+        <input type="hidden" name="obj" value="address">
+        <input type="hidden" name="act" value="addAddress">
+        <table>
+            <tbody>
+            <!--增加地址    开始-->
+            <tr height="35">
+                <td>
+                    <span><span style="color: #f00;">*</span>&nbsp;地址：</span>
+                </td>
+                <td>
+                <span><input type="text" name="address" id="address" class="ui-autocomplete-input" placeholder="最多20个字符"
+                             required
                              maxlength="20"/></span>
-            </td>
-            <td>
-                <span>备注：</span>
-            </td>
-            <td>
-                <span><input type="text" name="remark" id="remark" placeholder="最多20个字符" maxlength="18"/></span>
-            </td>
-            <td>
-                <span><input type="submit" value="添加地址"></span>
-            </td>
-        </tr>
-        <!--增加地址    结束-->
-        </tbody>
-    </table>
-</form>
+                </td>
+            </tr>
+            <tr height="35">
+                <td>
+                    <span>备注：</span>
+                </td>
+                <td>
+                                <span><input type="text" name="remark" id="remark" class="ui-autocomplete-input"
+                                             placeholder="最多20个字符"
+                                             maxlength="18"/></span>
+                </td>
+            </tr>
+            <tr height="35">
+                <td>
+                    <span><input type="submit" value="添加地址" class="ui-button ui-corner-all ui-widget"></span>
+                </td>
+            </tr>
+            <!--增加地址    结束-->
+            </tbody>
+        </table>
+    </form>
+</div>
 <br/>
 <!-- 收货地址    结束 -->
+
+
+<!--JQuery脚本    开始-->
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<!-- S    收货地址增加-->
+<script>
+    $(function () {
+        $("#dialog_address").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 130,
+            width: 250,
+            show: {
+                effect: "fade",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+
+        $("#opener_address").click(function () {
+            $("#dialog_address").dialog("open");
+        });
+    });
+</script>
+<!-- E    收货地址增加-->
+<!--JQuery脚本    结束-->
+
+
 </body>
 </html>

@@ -24,28 +24,32 @@
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <link rel="stylesheet" type="text/css" href="css/rl.css">
+    <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <%
     User user = (User) session.getAttribute("user");
     UserAddress userAddress;
-    if (user!=null) {
+    if (user != null) {
         UserDao userDao = new UserDaoImpl();
         User userD = userDao.getById(user.getId());
         if (userD != null && user.getPassword().equals(userD.getPassword())) {
             session.setAttribute("user", userD);
-            userAddress= (UserAddress) request.getAttribute("getAddressById");
-            if(userAddress==null){
-                userAddress=new UserAddress();
-                request.setAttribute("msg","参数不正确");
-                request.getRequestDispatcher("user.jsp").forward(request,response);
+            userAddress = (UserAddress) request.getAttribute("getAddressById");
+            if (userAddress == null) {
+                userAddress = new UserAddress();
+                request.setAttribute("msg", "参数不正确");
+                request.getRequestDispatcher("user.jsp").forward(request, response);
             }
         } else {
-            userAddress=new UserAddress();
+            userAddress = new UserAddress();
             response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
-    }else{
-        userAddress=new UserAddress();
+    } else {
+        userAddress = new UserAddress();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
@@ -55,7 +59,7 @@
     <input type="hidden" name="act" value="setAddress">
     <input type="hidden" name="addressId" value="<%=userAddress.getId()%>">
     <table class="rl_table" border="0" cellspacing="0" cellpadding="0">
-        <tbody>
+        <thead>
         <!--页面跳转导航    S-->
         <tr height="35" valign="top">
             <td colspan="3">
@@ -64,6 +68,8 @@
             </td>
         </tr>
         <!--页面跳转导航    E-->
+        </thead>
+        <tbody>
         <!--标题    S-->
         <tr height="35" valign="top">
             <td colspan="2">
@@ -76,8 +82,9 @@
             <td class="rl_td_spn">
                 <span><span style="color: #f00;">*</span>&nbsp;收货地址：</span>
             </td>
-            <td  class="rl_td_inp">
+            <td class="rl_td_inp">
                 <span><input type="text" name="address" id="address" placeholder="最多20个字符" required
+                             class="ui-autocomplete-input"
                              maxlength="20" value="<%=userAddress.getAddress()%>"/></span>
             </td>
         </tr>
@@ -87,12 +94,13 @@
             </td>
             <td class="rl_td_inp">
                 <span><input type="text" name="remark" id="remark" placeholder="最多18个字符" maxlength="18"
+                             class="ui-autocomplete-input"
                              value="<%=userAddress.getRemark()%>"/></span>
             </td>
         </tr>
         <tr height="60">
             <td colspan="2" class="rl_td_btn">
-                <span><input class="rl_btn" type="submit" value="修改地址"></span>
+                <span><input class="rl_btn ui-button ui-corner-all ui-widget" type="submit" value="修改地址"></span>
             </td>
         </tr>
         <!--修改地址    结束-->

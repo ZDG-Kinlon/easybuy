@@ -5,10 +5,10 @@ import com.emy.dao.news.impl.NewsDaoImpl;
 import com.emy.entity.News;
 import com.emy.service.ServiceNews;
 import com.emy.util.Log;
+import com.emy.util.MathUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 
 /**
  * 资讯业务的请求实现类
@@ -19,16 +19,16 @@ import java.util.Date;
 public class ServiceNewsImpl
         extends PublicService
         implements ServiceNews {
-    private News news=new News();
-    private NewsDao newsDao=new NewsDaoImpl();
+    private News news = new News();
+    private NewsDao newsDao = new NewsDaoImpl();
 
     /**
      * 构造方法，不允许无参数
-     *
      */
     public ServiceNewsImpl(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
     }
+
 
     /**
      * 添加资讯
@@ -38,19 +38,117 @@ public class ServiceNewsImpl
         switch (checkIsLogin()) {
             case 0:
                 Log.logToConsole("请求", "添加资讯");
-                if(checkIsAdmin()==0){
+                if (checkIsAdmin() == 0) {
                     //获取添加的资讯
                     this.news.setTitle(getStr("title"));
                     this.news.setContent(getStr("content"));
                     //非空检测
-                    if(this.news.check()){
+                    if (this.news.check()) {
                         //写入数据库
                         this.newsDao.add(this.news);
                         flushPage();
-                    }else{
+                    } else {
                         toPage("manager.jsp");
                     }
-                }else{
+                } else {
+                    toPage("user.jsp");
+                }
+                break;
+            case 1:
+                toInfoPage("参数异常");
+                break;
+            case 2:
+                toInfoPage("请先登录");
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 根据资讯id获取资讯
+     */
+    @Override
+    public void getNewsById() {
+        switch (checkIsLogin()) {
+            case 0:
+                Log.logToConsole("请求", "使用资讯编号获取资讯");
+                if (checkIsAdmin() == 0) {
+                    int newsId = MathUtils.stringToInteger(getStr("newsId"));
+                    if (newsId != 0) {
+                        this.news = this.newsDao.getById(newsId);
+                        rePageObj("setNews.jsp", "news", this.news);
+                    } else {
+                        toInfoPage("参数异常");
+                    }
+                } else {
+                    toPage("user.jsp");
+                }
+                break;
+            case 1:
+                toInfoPage("参数异常");
+                break;
+            case 2:
+                toInfoPage("请先登录");
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 修改资讯信息
+     */
+    @Override
+    public void setNews() {
+        switch (checkIsLogin()) {
+            case 0:
+                Log.logToConsole("请求", "修改资讯");
+                if (checkIsAdmin() == 0) {
+                    int newsId = MathUtils.stringToInteger(getStr("newsId"));
+                    if (newsId != 0) {
+                        this.news.setId(newsId);
+                        this.news.setTitle(getStr("title"));
+                        this.news.setContent(getStr("content"));
+                        if (this.news.check() && this.newsDao.set(this.news) == 1) {
+                            toPage("manager.jsp");
+                        } else {
+                            toInfoPage("参数异常");
+                        }
+                    } else {
+                        toInfoPage("参数异常");
+                    }
+                } else {
+                    toPage("user.jsp");
+                }
+                break;
+            case 1:
+                toInfoPage("参数异常");
+                break;
+            case 2:
+                toInfoPage("请先登录");
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 删除资讯
+     */
+    @Override
+    public void deleteNews() {
+        switch (checkIsLogin()) {
+            case 0:
+                Log.logToConsole("请求", "删除资讯");
+                if (checkIsAdmin() == 0) {
+                    int newsId = MathUtils.stringToInteger(getStr("newsId"));
+                    if (newsId != 0 && this.newsDao.del(newsId) == 1) {
+                        toPage("manager.jsp");
+                    } else {
+                        toInfoPage("参数异常");
+                    }
+                } else {
                     toPage("user.jsp");
                 }
                 break;

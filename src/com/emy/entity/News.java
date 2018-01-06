@@ -3,8 +3,6 @@ package com.emy.entity;
 
 import java.util.Date;
 
-import com.emy.util.Log;
-
 /**
  * 易买网-资讯类
  *

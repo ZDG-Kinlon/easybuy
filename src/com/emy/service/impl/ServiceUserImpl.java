@@ -1,7 +1,5 @@
 package com.emy.service.impl;
 
-import com.emy.dao.user.UserDao;
-import com.emy.dao.user.impl.UserDaoImpl;
 import com.emy.service.ServiceUser;
 import com.emy.util.Log;
 import com.emy.entity.User;
@@ -61,7 +59,7 @@ public class ServiceUserImpl
                 //修改用户类型
                 this.user.setType(MathUtils.stringToInteger(getStr("type")));
                 //写入数据库
-                if (this.userDao.set(this.user) == 1) {
+                if (this.user.check()&&this.userDao.set(this.user) == 1) {
                     HttpSession session = req.getSession();
                     session.setAttribute("user", this.user);
                     toInfoPage(this.user.getLoginName() + "用户信息修改，成功");
@@ -150,9 +148,8 @@ public class ServiceUserImpl
         user.setEmail(getStr("email"));
         user.setMobile(getStr("mobile"));
         user.setType(MathUtils.stringToInteger(getStr("type")));
-        if (user.check()) {
+        if (user.check()&&this.userDao.add(user)==1) {
             //全部参数获取到值
-            this.userDao.add(user);
             Log.logToConsole("结果", user.getLoginName() + " 注册成功");
             toInfoPage("注册成功");
         } else {

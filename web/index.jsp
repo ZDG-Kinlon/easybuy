@@ -1,6 +1,14 @@
 <%@ page import="com.emy.entity.User" %>
 <%@ page import="com.emy.dao.user.UserDao" %>
-<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %><%--
+<%@ page import="com.emy.dao.user.impl.UserDaoImpl" %>
+<%@ page import="com.emy.entity.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.emy.dao.news.NewsDao" %>
+<%@ page import="com.emy.dao.news.impl.NewsDaoImpl" %>
+<%@ page import="com.emy.entity.News" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Base64" %>
+<%@ page import="java.io.UnsupportedEncodingException" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/2
@@ -22,6 +30,10 @@
     <!--基础样式 -->
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
+    <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <body>
@@ -64,15 +76,115 @@
                     href="login.jsp">【登录】</a>
         </span>
             <!--没有登录    结束--><%
-            //E    没有登录
-        }
-    }
+                    //E    没有登录
+                }
+            }
         %></td>
     </tr>
     </tbody>
 </table>
+<br>
 <!--欢迎信息    结束-->
 
+<!--资讯显示    开始-->
+<div id="news_div" style="width:700px;"><%
+    NewsDao newsDao = new NewsDaoImpl();
+    List<News> newsList = newsDao.getAll();
+    int n = newsList.size();
+    if (n > 0) {
+        for (News news : newsList) {
+%><h3><span><%=news.getTitle()%></span></h3>
+    <div>
+        <ul>
+            <li>&nbsp;&nbsp;<span><%=new
+                    SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(news.getCreatTime())%></span></li>
+            <li><textarea maxlength="1024" cols="50" rows="10" style="resize: none;width:648px;"><%
+                String contentStr = news.getContent();
+                try {
+                    byte[] byteArr = Base64.getDecoder().decode(contentStr);
+                    out.print(new String(byteArr, "UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    out.print("（加载失败）BASE64编码：" + contentStr);
+                }
+            %></textarea></li>
+        </ul>
+    </div>
+    <%
+            }
+        }
+    %></div>
+<!--资讯显示    结束-->
 
+<!--JQuery脚本    开始-->
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#news_div").accordion({
+            event: "click hoverintent"
+        });
+    });
+    //S    悬停事件
+    $.event.special.hoverintent = {
+        setup: function () {
+            $(this).bind("mouseover", jQuery.event.special.hoverintent.handler);
+        },
+        teardown: function () {
+            $(this).unbind("mouseover", jQuery.event.special.hoverintent.handler);
+        },
+        handler: function (event) {
+            var currentX, currentY, timeout,
+                args = arguments,
+                target = $(event.target),
+                previousX = event.pageX,
+                previousY = event.pageY;
+
+            function track(event) {
+                currentX = event.pageX;
+                currentY = event.pageY;
+            };
+
+            function clear() {
+                target
+                    .unbind("mousemove", track)
+                    .unbind("mouseout", clear);
+                clearTimeout(timeout);
+            }
+
+            function handler() {
+                var prop,
+                    orig = event;
+
+                if ((Math.abs(previousX - currentX) +
+                        Math.abs(previousY - currentY)) < 7) {
+                    clear();
+
+                    event = $.Event("hoverintent");
+                    for (prop in orig) {
+                        if (!(prop in event)) {
+                            event[prop] = orig[prop];
+                        }
+                    }
+                    // 防止访问原始事件，因为新事件会被异步触发，旧事件不再可用 (#6028)
+                    delete event.originalEvent;
+
+                    target.trigger(event);
+                } else {
+                    previousX = currentX;
+                    previousY = currentY;
+                    timeout = setTimeout(handler, 100);
+                }
+            }
+
+            timeout = setTimeout(handler, 100);
+            target.bind({
+                mousemove: track,
+                mouseout: clear
+            });
+        }
+    };
+    //E    悬停事件
+</script>
+<!--JQuery脚本    结束-->
 </body>
 </html>

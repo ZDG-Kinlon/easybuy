@@ -81,11 +81,20 @@ public class Service {
                 case "news":
                     //使用Lambda表达式实现分发资讯业务的函数接口
                     BiConsumer<ServiceNews, String> serviceNews = (_obj, _act) -> {
-                        Consumer<ServiceNews> lambda = null;
+                        Consumer<ServiceNews> lambda;
                         switch (_act) {
-                            case "addNews":
+                            case "addNews": //添加资讯
                                 lambda = ServiceNews::addNews;
                                 break;
+                            case "getNewsById": //通过编号获取资讯
+                                lambda=ServiceNews::getNewsById;
+                                break;
+                            case "setNews":
+                                lambda=ServiceNews::setNews;
+                                break;
+                            case "deleteNews":
+                                lambda=ServiceNews::deleteNews;
+                            	break;
                             default:
                                 return;
                         }
