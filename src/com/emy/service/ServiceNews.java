@@ -13,11 +13,6 @@ public interface ServiceNews {
     public void addNews();
 
     /**
-     * 根据资讯id获取资讯
-     */
-    public void getNewsById();
-
-    /**
      * 修改资讯信息
      */
     public void setNews();

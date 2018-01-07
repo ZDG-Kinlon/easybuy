@@ -7,11 +7,7 @@ package com.emy.service;
  * @version 1.0.0
  */
 public interface ServiceAddress {
-	/**
-	 * 使用id获取收货地址
-	 */
-	public void getAddressById();
-	
+
     /**
      * 修改收货地址
      */

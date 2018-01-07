@@ -65,9 +65,6 @@ public class Service {
                             case "deleteAddress":// 删除收货地址
                                 lambda = ServiceAddress::deleteAddress;
                                 break;
-                            case "getAddressById":// 通过id获取收货地址
-                                lambda = ServiceAddress::getAddressById;
-                                break;
                             case "setAddress":// 修改收货地址
                                 lambda = ServiceAddress::setAddress;
                                 break;
@@ -86,15 +83,12 @@ public class Service {
                             case "addNews": //添加资讯
                                 lambda = ServiceNews::addNews;
                                 break;
-                            case "getNewsById": //通过编号获取资讯
-                                lambda=ServiceNews::getNewsById;
-                                break;
                             case "setNews":
-                                lambda=ServiceNews::setNews;
+                                lambda = ServiceNews::setNews;
                                 break;
                             case "deleteNews":
-                                lambda=ServiceNews::deleteNews;
-                            	break;
+                                lambda = ServiceNews::deleteNews;
+                                break;
                             default:
                                 return;
                         }

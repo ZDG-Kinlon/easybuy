@@ -67,7 +67,7 @@ public class ServiceAddressImpl
                     value = getStr("remark");
                     if (value != null) userAddress.setRemark(value);
                     if (this.userAddress.check() && this.userAddressDao.set(this.userAddress) == 1) {
-                        toPage("user.jsp");
+                        toInfoPage("修改成功");
                         Log.logToConsole("结果", "修改成功");
                     } else {
                         toInfoPage("参数异常");
@@ -75,7 +75,7 @@ public class ServiceAddressImpl
                     }
                 } else {
                     toInfoPage("修改的地址不属于当前用户");
-                    Log.logToConsole("结果", "修改失败");
+                    Log.logToConsole("结果", "修改失败，没有用户编号不匹配");
                 }
                 break;
             case 1:
@@ -101,10 +101,11 @@ public class ServiceAddressImpl
                     //验证匹配
                     if (this.userAddressDao.del(this.userAddress.getId()) == 1) {
                         Log.logToConsole("结果", "删除成功");
+                        toInfoPage("删除成功");
                     } else {
                         Log.logToConsole("结果", "删除失败");
+                        toInfoPage("删除失败");
                     }
-                    flushPage();
                 } else {
                     //不是当前用户的地址
                     toInfoPage("删除的地址不属于当前用户");
@@ -132,11 +133,11 @@ public class ServiceAddressImpl
                 Log.logToConsole("请求", "修改收货地址");
                 if (checkAddress(MathUtils.stringToInteger(getStr("addressId")))) {
                     this.userAddressDao.setDefaultAddress(this.user.getId(), this.userAddress.getId());
-                    flushPage();
-                    Log.logToConsole("结果", "设置成功");
+                    toInfoPage("修改地址" + this.userAddress.getId() + "为默认地址");
+                    Log.logToConsole("结果", "修改默认地址成功");
                 } else {
                     toInfoPage("修改的地址不属于当前用户");
-                    Log.logToConsole("结果", "设置失败");
+                    Log.logToConsole("结果", "修改默认地址失败，不用于当前用户");
                 }
                 break;
             case 1:
@@ -166,39 +167,11 @@ public class ServiceAddressImpl
                 userAddress.setRemark(getStr("remark"));
                 if (userAddress.check() && this.userAddressDao.add(userAddress) == 1) {
                     Log.logToConsole("结果", "添加成功");
-                    flushPage();
+                    toInfoPage("添加成功");
                 } else {
                     //存在未赋值的参数
                     Log.logToConsole("结果", "添加失败");
                     toInfoPage("参数不完整");
-                }
-                break;
-            case 1:
-                toInfoPage("参数异常");
-                break;
-            case 2:
-                toInfoPage("请先登录");
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * 使用id获取收货地址
-     */
-    @Override
-    public void getAddressById() {
-        switch (checkIsLogin()) {
-            case 0:
-                Log.logToConsole("请求", "获取收货地址");
-                if (checkAddress(MathUtils.stringToInteger(getStr("addressId")))) {
-                    UserAddress userAddress = this.userAddressDao.getById(this.userAddress.getId());
-                    rePageObj("setAddress.jsp", "getAddressById", userAddress);
-                    Log.logToConsole("结果", "获取成功");
-                } else {
-                    toInfoPage("修改的地址不属于当前用户");
-                    Log.logToConsole("结果", "获取失败");
                 }
                 break;
             case 1:

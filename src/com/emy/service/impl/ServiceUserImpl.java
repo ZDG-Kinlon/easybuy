@@ -24,7 +24,6 @@ public class ServiceUserImpl
 
     /**
      * 构造方法，不允许无参数
-     *
      */
     public ServiceUserImpl(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
@@ -59,7 +58,7 @@ public class ServiceUserImpl
                 //修改用户类型
                 this.user.setType(MathUtils.stringToInteger(getStr("type")));
                 //写入数据库
-                if (this.user.check()&&this.userDao.set(this.user) == 1) {
+                if (this.user.check() && this.userDao.set(this.user) == 1) {
                     HttpSession session = req.getSession();
                     session.setAttribute("user", this.user);
                     toInfoPage(this.user.getLoginName() + "用户信息修改，成功");
@@ -85,17 +84,17 @@ public class ServiceUserImpl
     public void logout() {
         switch (checkIsLogin()) {
             case 0:
-                Log.logToConsole("请求", "退出");
+                Log.logToConsole("请求", "退出登录");
                 HttpSession session = req.getSession();
                 session.invalidate();
-                Log.logToConsole("结果", this.user.getLoginName() + "已退出");
+                Log.logToConsole("结果", "退出成功");
                 flushPage();
                 break;
             case 1:
                 toInfoPage("退出失败，参数异常");
                 break;
             case 2:
-                toInfoPage("退出失败，请先登录");
+                toInfoPage("出失败，请先登录");
                 break;
             default:
                 break;
@@ -117,7 +116,7 @@ public class ServiceUserImpl
                 session.setAttribute("user", this.user);
                 session.setMaxInactiveInterval(1800);//30分钟后失效
                 Log.logToConsole("结果", loginName + " 登录成功");
-                flushPage();
+                toInfoPage(loginName + " 登录成功");
                 break;
             case 1:
                 Log.logToConsole("结果", loginName + " 密码错误");
@@ -148,14 +147,14 @@ public class ServiceUserImpl
         user.setEmail(getStr("email"));
         user.setMobile(getStr("mobile"));
         user.setType(MathUtils.stringToInteger(getStr("type")));
-        if (user.check()&&this.userDao.add(user)==1) {
+        if (user.check() && this.userDao.add(user) == 1) {
             //全部参数获取到值
             Log.logToConsole("结果", user.getLoginName() + " 注册成功");
-            toInfoPage("注册成功");
+            toInfoPage(user.getLoginName() + " 注册成功");
         } else {
             //存在未赋值的参数
             Log.logToConsole("结果", user.getLoginName() + " 注册失败");
-            toInfoPage("参数不完整");
+            toInfoPage(user.getLoginName() + " 参数不完整");
         }
     }
 

@@ -29,7 +29,6 @@ public class ServiceNewsImpl
         super(req, res);
     }
 
-
     /**
      * 添加资讯
      */
@@ -66,37 +65,6 @@ public class ServiceNewsImpl
     }
 
     /**
-     * 根据资讯id获取资讯
-     */
-    @Override
-    public void getNewsById() {
-        switch (checkIsLogin()) {
-            case 0:
-                Log.logToConsole("请求", "使用资讯编号获取资讯");
-                if (checkIsAdmin() == 0) {
-                    int newsId = MathUtils.stringToInteger(getStr("newsId"));
-                    if (newsId != 0) {
-                        this.news = this.newsDao.getById(newsId);
-                        rePageObj("setNews.jsp", "news", this.news);
-                    } else {
-                        toInfoPage("参数异常");
-                    }
-                } else {
-                    toPage("user.jsp");
-                }
-                break;
-            case 1:
-                toInfoPage("参数异常");
-                break;
-            case 2:
-                toInfoPage("请先登录");
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
      * 修改资讯信息
      */
     @Override
@@ -111,7 +79,7 @@ public class ServiceNewsImpl
                         this.news.setTitle(getStr("title"));
                         this.news.setContent(getStr("content"));
                         if (this.news.check() && this.newsDao.set(this.news) == 1) {
-                            toPage("manager.jsp");
+                            toInfoPage("修改成功");
                         } else {
                             toInfoPage("参数异常");
                         }

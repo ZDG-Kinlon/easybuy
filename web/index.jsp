@@ -98,7 +98,7 @@
         <ul>
             <li>&nbsp;&nbsp;<span><%=new
                     SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(news.getCreatTime())%></span></li>
-            <li><textarea maxlength="1024" cols="50" rows="10" style="resize: none;width:648px;"><%
+            <li><textarea class="text ui-widget-content ui-corner-all" maxlength="1024" cols="50" rows="10" style="resize: none;width:648px;"><%
                 String contentStr = news.getContent();
                 try {
                     byte[] byteArr = Base64.getDecoder().decode(contentStr);
