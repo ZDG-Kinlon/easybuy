@@ -25,9 +25,8 @@
     <link rel="stylesheet" type="text/css" href="css/rl.css"/>
     <!--主页部分    结束-->
     <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
 </head>
 <%
     User user = (User) session.getAttribute("user");
@@ -105,10 +104,9 @@
     </div>
 </div>
 <!-- 登录区域    开始 -->
-<!--js脚本    开始-->
-<script src="js/jquery-3.2.1.js"></script>
-<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <!--JQuery脚本集    开始-->
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script src="js/md5.js"></script>
 
 <!-- S    注册区域样式-->

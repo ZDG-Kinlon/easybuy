@@ -30,9 +30,8 @@
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <link rel="stylesheet" type="text/css" href="css/rl.css">
     <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <%
@@ -99,7 +98,7 @@
             <tbody>
             <tr>
                 <td>
-                    <button id="opener_setUser" onclick="openDialog('#dialog_setUser',400,320)"
+                    <button id="opener_setUser" onclick="openDialog('#dialog_setUser',450,320)"
                             class="ui-button ui-corner-all ui-widget" style="margin: 5px;">修改
                     </button>
                     <!-- 修改用户信息    开始 -->
@@ -111,7 +110,7 @@
                                 <tbody>
                                 <!--新密码    S-->
                                 <tr height="35">
-                                    <td class="rl_td_spn">新密码</td>
+                                    <td class="rl_td_spn"><span style="color: #f00">可选</span>&nbsp;新密码</td>
                                     <td class="rl_td_inp"><input
                                             class="rl_input text ui-widget-content ui-corner-all" type="password"
                                             id="password" value=""><input
@@ -122,7 +121,7 @@
                                 <!--新密码    E-->
                                 <!--姓名    S-->
                                 <tr height="35">
-                                    <td class="rl_td_spn">姓名</td>
+                                    <td class="rl_td_spn"><span style="color: #f00">*</span>&nbsp;姓名</td>
                                     <td class="rl_td_inp"><input
                                             class="rl_input text ui-widget-content ui-corner-all" type="text"
                                             name="userName" maxlength="20" placeholder="最多20个字符"
@@ -132,7 +131,7 @@
                                 <!--姓名    E-->
                                 <!--性别    S-->
                                 <tr height="35">
-                                    <td class="rl_td_spn">性别</td>
+                                    <td class="rl_td_spn"><span style="color: #f00">*</span>&nbsp;性别</td>
                                     <td class="rl_td_inp"><input
                                             class="rl_radio" type="radio" name="sex"
                                             value="1" <%if(user.getSex()==1)out.print("checked");%>><span>男</span><input
@@ -179,18 +178,6 @@
                                     <td class="rl_td_err"><span id="mobile_msg"></span></td>
                                 </tr>
                                 <!--手机号    E-->
-                                <!--用户类型    S-->
-                                <tr height="35">
-                                    <td class="rl_td_spn">用户类型</td>
-                                    <td class="rl_td_inp"><input
-                                            class="rl_radio" type="radio" name="type"
-                                            value="1" <%if(user.getType()==1)out.print("checked");%>><span>买家</span>
-                                        <input class="rl_radio" type="radio" name="type"
-                                               value="2" <%if(user.getType()==2)out.print("checked");%>><span>管理员</span>
-                                    </td>
-                                    <td class="rl_td_err"></td>
-                                </tr>
-                                <!--用户类型    E-->
                                 <!--递交按钮    S-->
                                 <tr height="60">
                                     <td class="rl_td_btn" colspan="2">
@@ -517,7 +504,7 @@
 
 <!--JQuery脚本    开始-->
 <script src="js/jquery-3.2.1.js"></script>
-<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script src="js/md5.js"></script>
 <!-- S    显示消息框-->
 <script>

@@ -1,14 +1,17 @@
 <%@ page import="com.emy.entity.User" %>
 <%@ page import="com.emy.dao.user.UserDao" %>
 <%@ page import="com.emy.dao.user.impl.UserDaoImpl" %>
-<%@ page import="com.emy.entity.User" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.emy.dao.news.NewsDao" %>
 <%@ page import="com.emy.dao.news.impl.NewsDaoImpl" %>
 <%@ page import="com.emy.entity.News" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Base64" %>
-<%@ page import="java.io.UnsupportedEncodingException" %><%--
+<%@ page import="java.io.UnsupportedEncodingException" %>
+<%@ page import="com.emy.entity.ProductCategory" %>
+<%@ page import="com.emy.dao.product.ProductCategoryDao" %>
+<%@ page import="com.emy.dao.product.impl.ProductCategoryDaoImpl" %>
+<%@ page import="java.util.function.Function" %>
+<%@ page import="java.util.function.BiFunction" %>
+<%@ page import="java.util.*" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/2
@@ -31,9 +34,8 @@
     <link rel="stylesheet" type="text/css" href="css/bass.css"/>
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <body>
@@ -41,45 +43,51 @@
 <table>
     <tbody>
     <tr>
-        <td>
-            <%
-    User user = (User) session.getAttribute("user");
-    if (user==null) {
-        user=new User();
-        //S    没有登录
-        %><!--没有登录    开始-->
-            <span>
-            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a
-                    href="login.jsp">【登录】</a>
-        </span>
-            <!--没有登录    结束--><%
-        //E    没有登录
-    }else{
-        UserDao userDao=new UserDaoImpl();
-        User userD=userDao.getById(user.getId());
-        if (userD!=null && user.getPassword().equals(userD.getPassword())){
-            //S    已登录
-            user=userD;
-            session.setAttribute("user",userD);
-            %><!--已登录    开始-->
-            <span>
-            您好，欢迎<a href="<%=request.getContextPath()%>/user.jsp">【<%=user.getUserName()%>】</a>来到易买网！&nbsp;&nbsp;<a
-                    href="<%=request.getContextPath()%>/url?obj=user&act=logout">【退出】</a>
-        </span>
-            <!--已登录    结束--><%
-            //E    已登录
-        }else{
-            //S    没有登录
-        %><!--没有登录    开始-->
-            <span>
-            还没加入我们？<a href="<%=request.getContextPath()%>/regist.jsp">【注册】</a>&nbsp;&nbsp;已经有帐号？<a
-                    href="login.jsp">【登录】</a>
-        </span>
-            <!--没有登录    结束--><%
-                    //E    没有登录
-                }
+        <td><%
+            User user = (User) session.getAttribute("user");
+            User userD=new User();
+            if (user!=null) {
+                UserDao userDao=new UserDaoImpl();
+                userD=userDao.getById(user.getId());
             }
-        %></td>
+            if (user !=null && userD!=null && user.getPassword().equals(userD.getPassword())){
+                //S    已登录
+                user=userD;
+                session.setAttribute("user",userD);
+            %><!--已登录    开始-->
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td>
+                    <span>您好，欢迎<button
+                            onclick="window.location.href='<%=request.getContextPath()%>/user.jsp';"
+                            style="margin: 5px;"
+                            class="ui-button ui-corner-all ui-widget"><%=user.getUserName()%></button>来到易买网！</span>
+                    </td>
+                    <td>
+                        <button href="<%=request.getContextPath()%>/url?obj=user&act=logout" style="margin: 5px;"
+                                class="ui-button ui-corner-all ui-widget">退出
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+                <%
+            }else {
+            %>
+        <td>
+            <span>还没加入我们？<button
+                    onclick="window.location.href='<%=request.getContextPath()%>/regist.jsp';"
+                    style="margin: 5px;"
+                    class="ui-button ui-corner-all ui-widget">注册</button></span>
+        </td>
+        <td>
+            <span>已经有帐号？<button onclick="window.location.href='<%=request.getContextPath()%>/login.jsp';"
+                                style="margin: 5px;"
+                                class="ui-button ui-corner-all ui-widget">登录
+            </button></span>
+        </td>
+        <% } %>
     </tr>
     </tbody>
 </table>
@@ -87,7 +95,7 @@
 <!--欢迎信息    结束-->
 
 <!--资讯显示    开始-->
-<div id="news_div" style="width:700px;"><%
+<div id="news_div" style="width:700px;margin:5px"><%
     NewsDao newsDao = new NewsDaoImpl();
     List<News> newsList = newsDao.getAll();
     int n = newsList.size();
@@ -98,7 +106,8 @@
         <ul>
             <li>&nbsp;&nbsp;<span><%=new
                     SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(news.getCreatTime())%></span></li>
-            <li><textarea class="text ui-widget-content ui-corner-all" maxlength="1024" cols="50" rows="10" style="resize: none;width:648px;"><%
+            <li><textarea class="text ui-widget-content ui-corner-all" maxlength="1024" cols="50" rows="10"
+                          style="resize: none;width:648px;"><%
                 String contentStr = news.getContent();
                 try {
                     byte[] byteArr = Base64.getDecoder().decode(contentStr);
@@ -112,12 +121,92 @@
     <%
             }
         }
-    %></div>
+    %>
+</div>
 <!--资讯显示    结束-->
+
+<!--商品分类    开始-->
+<%
+
+    //1.获取商品分类List集合
+    ProductCategoryDao productCategoryDao = new ProductCategoryDaoImpl();
+    List<ProductCategory> productCategoryList = productCategoryDao.getAll();
+    int pcs = productCategoryList.size();
+    if (pcs > 0) {
+%><div style="margin:5px">
+<ul id="menu_product_category">
+    <li class="ui-state-disabled"><span style="">全部商品分类</span></li><%
+        //2.寻找一级分类
+        ProductCategory pc1;
+        for (int i1 = 0; i1 < pcs; i1++) {
+            pc1 = productCategoryList.get(i1);
+            if (pc1.getId3() == 0 && pc1.getId2() == 0 && pc1.getId1() != 0) {
+                int n1 = pc1.getId1();
+                //找到一级分类
+%><li><span><%=pc1.getName()%></span><%
+		        //3.寻找二级分类
+		        ProductCategory pc2;
+		        int n2 = 0;
+		        for (int i2 = 0; i2 < pcs; i2++) {
+		            pc2 = productCategoryList.get(i2);
+		            if (pc2.getId3() == 0 && pc2.getId2() != 0 && pc2.getId1() == pc1.getId1()) {
+		                n2++;
+		                //找到二级分类
+		                if (n2 == 1) {
+		                    //找到二级分类的第一个
+		%><ul><%
+		            	}
+		%><li><span><%=pc2.getName()%></span><%
+		                 //4.寻找三级分类
+		                 ProductCategory pc3;
+		                 int n3=0;
+		                 for (int i3 = 0; i3 < pcs; i3++) {
+		                     pc3=productCategoryList.get(i3);
+		                     if(pc3.getId3()!=0 && pc3.getId2()==pc2.getId2() && pc3.getId1()==pc2.getId1()){
+		                         n3++;
+		                         //找到三级分类
+		                         if(n3==1){
+		                             //找到三级分类的第一个
+			%><ul><%
+				                }
+				                String url = "_" + n1 + "_" + n2 + "_" + n3;
+			%><li><a href="#_<%=url%>"><%=pc3.getName()%></a></li><%
+			               }
+			               if (i3 == pcs - 1 && n3 > 0) {
+			                       //找到三级分类最后一个，闭合标签
+			%></ul></li><%
+			               }
+			           }
+		            }
+		            if (i2 == pcs - 1 && n2 > 0) {
+		                    //找到二级分类最后一个，闭合标签
+		%></ul></li><%
+					}
+		        }
+			}
+		}
+		%></ul></div><%
+	}
+%>
+<!--商品分类    结束-->
+
+
 
 <!--JQuery脚本    开始-->
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+<!--菜单特效    开始-->
+<style rel="stylesheet">
+    .ui-menu { width: 100px; }
+    .ui-menu-item{font-size:20px;}
+</style>
+<script>
+    $(function() {
+        $( "#menu_product_category" ).menu();
+    });
+</script>
+<!--菜单特效    结束-->
+<!--折叠特效    开始-->
 <script>
     $(function () {
         $("#news_div").accordion({
@@ -185,6 +274,7 @@
     };
     //E    悬停事件
 </script>
+<!--折叠特效    结束-->
 <!--JQuery脚本    结束-->
 </body>
 </html>

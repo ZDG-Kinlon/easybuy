@@ -13,11 +13,10 @@ public class ProductCategory {
     private int id;
     //名字
     private String name;
-    //父分类
-    private int parentId;
-    //类型
-    private int type;
-
+    //分类编号
+    private int id1;
+    private int id2;
+    private int id3;
     //构造方法
     public ProductCategory() {
     }
@@ -30,11 +29,13 @@ public class ProductCategory {
     public boolean check() {
         if (this.name == null) {
             return false;
-        } else if (this.parentId == 0) {
+        } else if (this.id1 == 0) {
             return false;
-        } else if (this.type == 0) {
+        } else if (this.id2 == 0) {
             return false;
-        } else {
+        } else if (this.id3 == 0) {
+            return false;
+        }else {
             return true;
         }
     }
@@ -56,20 +57,28 @@ public class ProductCategory {
         this.name = name;
     }
 
-    public int getParentId() {
-        return parentId;
+    public int getId1() {
+        return id1;
     }
 
-    public void setParentId(int parentId) {
-        this.parentId = parentId;
+    public void setId1(int id1) {
+        this.id1 = id1;
     }
 
-    public int getType() {
-        return type;
+    public int getId2() {
+        return id2;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setId2(int id2) {
+        this.id2 = id2;
+    }
+
+    public int getId3() {
+        return id3;
+    }
+
+    public void setId3(int id3) {
+        this.id3 = id3;
     }
 
     //get set方法    E

@@ -32,9 +32,8 @@
     <link rel="stylesheet" type="text/css" href="css/html.css"/>
     <link rel="stylesheet" type="text/css" href="css/rl.css">
     <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
     <!--主页部分    结束-->
 </head>
 <%
@@ -214,7 +213,7 @@
                                                                     <span><textarea id="content_<%=news.getId()%>"
                                                                                     maxlength="1024" cols="50" rows="10"
                                                                                     style="resize: none;width:648px;"
-                                                                                    class="text ui-widget-content ui-corner-all"
+                                                                                    class="content_text text ui-widget-content ui-corner-all"
                                                                                     required placeholder="最多1024个字符"><%
                                                                         contentStr = news.getContent();
                                                                         try {
@@ -281,7 +280,7 @@
 
 <!--JQuery脚本    开始-->
 <script src="js/jquery-3.2.1.js"></script>
-<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script src="js/jbase64.js"></script>
 <!-- S    显示消息框-->
 <script>
@@ -333,6 +332,11 @@
         //S    加密资讯内容，防止换行符号丢失
         $(".content_text").blur(function () {
             $("#" + "contentHide_" + $(this).attr("id").split("_").pop()).val(BASE64.encoder($(this).val()));
+        });
+        //E    加密资讯内容，防止换行符号丢失
+        //S    加密资讯内容，防止换行符号丢失
+        $("#content").blur(function () {
+            $("#contentHide").val(BASE64.encoder($(this).val()));
         });
         //E    加密资讯内容，防止换行符号丢失
     });

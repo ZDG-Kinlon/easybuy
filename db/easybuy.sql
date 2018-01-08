@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-01-05 19:41:09
+Date: 2018-01-09 02:23:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,11 +21,17 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `easybuy_news`;
 CREATE TABLE `easybuy_news` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '标题',
-  `content` varchar(1024) COLLATE utf8_bin NOT NULL COMMENT '内容',
+  `title` varchar(2048) COLLATE utf8_bin NOT NULL COMMENT '标题',
+  `content` varchar(8096) COLLATE utf8_bin NOT NULL COMMENT '内容',
   `creatTime` datetime NOT NULL COMMENT '录入日期',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of easybuy_news
+-- ----------------------------
+INSERT INTO `easybuy_news` VALUES ('7', '测试', '5rWL6K+V6LWE6K6v', '2018-01-08 15:35:15');
+INSERT INTO `easybuy_news` VALUES ('8', '滚动资讯测试', '5rua5Yqo6LWE6K6v5rWL6K+V5YaF5a65', '2018-01-08 15:44:24');
 
 -- ----------------------------
 -- Table structure for easybuy_order
@@ -45,6 +51,10 @@ CREATE TABLE `easybuy_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
+-- Records of easybuy_order
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for easybuy_order_detail
 -- ----------------------------
 DROP TABLE IF EXISTS `easybuy_order_detail`;
@@ -56,6 +66,10 @@ CREATE TABLE `easybuy_order_detail` (
   `cost` float(10,3) NOT NULL COMMENT '金额',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of easybuy_order_detail
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for easybuy_product
@@ -76,16 +90,55 @@ CREATE TABLE `easybuy_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
+-- Records of easybuy_product
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for easybuy_product_category
 -- ----------------------------
 DROP TABLE IF EXISTS `easybuy_product_category`;
 CREATE TABLE `easybuy_product_category` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '名字',
-  `parentId` int(10) NOT NULL COMMENT '父分类',
-  `type` int(1) NOT NULL COMMENT '类型',
+  `id1` int(2) NOT NULL COMMENT '一级分类编号',
+  `id2` int(3) NOT NULL COMMENT '二级分类编号',
+  `id3` int(3) NOT NULL COMMENT '三级分类编号',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of easybuy_product_category
+-- ----------------------------
+INSERT INTO `easybuy_product_category` VALUES ('1', '手机专区', '1', '0', '0');
+INSERT INTO `easybuy_product_category` VALUES ('2', '电脑专区', '2', '0', '0');
+INSERT INTO `easybuy_product_category` VALUES ('3', '家电专区', '3', '0', '0');
+INSERT INTO `easybuy_product_category` VALUES ('4', '苹果', '1', '1', '0');
+INSERT INTO `easybuy_product_category` VALUES ('5', '安卓', '1', '2', '0');
+INSERT INTO `easybuy_product_category` VALUES ('6', '功能机', '1', '3', '0');
+INSERT INTO `easybuy_product_category` VALUES ('7', 'iPhoneX', '1', '1', '1');
+INSERT INTO `easybuy_product_category` VALUES ('8', 'iPhone8', '1', '1', '2');
+INSERT INTO `easybuy_product_category` VALUES ('9', '小米', '1', '2', '1');
+INSERT INTO `easybuy_product_category` VALUES ('10', '华为', '1', '2', '2');
+INSERT INTO `easybuy_product_category` VALUES ('11', '铱星', '1', '3', '1');
+INSERT INTO `easybuy_product_category` VALUES ('12', '诺基亚', '1', '3', '2');
+INSERT INTO `easybuy_product_category` VALUES ('13', '台式电脑', '2', '1', '0');
+INSERT INTO `easybuy_product_category` VALUES ('14', '笔记本电脑', '2', '2', '0');
+INSERT INTO `easybuy_product_category` VALUES ('15', '平板电脑', '2', '3', '0');
+INSERT INTO `easybuy_product_category` VALUES ('16', '组装机', '2', '1', '1');
+INSERT INTO `easybuy_product_category` VALUES ('17', '一体机', '2', '1', '2');
+INSERT INTO `easybuy_product_category` VALUES ('18', '戴尔', '2', '2', '1');
+INSERT INTO `easybuy_product_category` VALUES ('19', '联想', '2', '2', '2');
+INSERT INTO `easybuy_product_category` VALUES ('20', '华硕', '2', '2', '3');
+INSERT INTO `easybuy_product_category` VALUES ('21', 'iPad', '2', '3', '1');
+INSERT INTO `easybuy_product_category` VALUES ('22', '酷比魔方', '2', '3', '2');
+INSERT INTO `easybuy_product_category` VALUES ('23', 'surface', '2', '3', '3');
+INSERT INTO `easybuy_product_category` VALUES ('24', '厨卫电器', '3', '1', '0');
+INSERT INTO `easybuy_product_category` VALUES ('25', '客卧电器', '3', '2', '0');
+INSERT INTO `easybuy_product_category` VALUES ('26', '热水器', '3', '1', '1');
+INSERT INTO `easybuy_product_category` VALUES ('27', '冰箱', '3', '1', '2');
+INSERT INTO `easybuy_product_category` VALUES ('28', '微波炉', '3', '1', '3');
+INSERT INTO `easybuy_product_category` VALUES ('29', '空调', '3', '2', '1');
+INSERT INTO `easybuy_product_category` VALUES ('30', '电视', '3', '2', '2');
 
 -- ----------------------------
 -- Table structure for easybuy_user
@@ -102,7 +155,12 @@ CREATE TABLE `easybuy_user` (
   `mobile` varchar(11) COLLATE utf8_bin DEFAULT NULL COMMENT '手机',
   `type` int(1) NOT NULL COMMENT '1买家 2管理员',
   PRIMARY KEY (`id`,`loginName`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of easybuy_user
+-- ----------------------------
+INSERT INTO `easybuy_user` VALUES ('4', 'admin', 'admin', '5111c5fe578635b1a260ae155b284421', '1', '12345123412121234x', '', '', '2');
 
 -- ----------------------------
 -- Table structure for easybuy_user_address
@@ -116,4 +174,13 @@ CREATE TABLE `easybuy_user_address` (
   `isDefault` int(1) NOT NULL COMMENT '默认地址 1否 2是',
   `remark` varchar(18) COLLATE utf8_bin DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of easybuy_user_address
+-- ----------------------------
+INSERT INTO `easybuy_user_address` VALUES ('3', '山东', '2018-01-03 22:28:25', '3', '2', '1233');
+INSERT INTO `easybuy_user_address` VALUES ('4', '河南', '2018-01-03 22:28:35', '3', '1', '123123');
+INSERT INTO `easybuy_user_address` VALUES ('6', '湖南', '2018-01-07 19:30:59', '4', '2', '123');
+INSERT INTO `easybuy_user_address` VALUES ('7', '上海', '2018-01-04 18:54:17', '4', '1', '12343434');
+INSERT INTO `easybuy_user_address` VALUES ('8', '四川', '2018-01-04 22:18:37', '4', '1', '654');

@@ -23,15 +23,16 @@ public class ProductCategoryDaoImpl
      * @return 影响的记录个数
      */
     @Override
-    public int add(ProductCategory pc) {
+    public int add(ProductCategory obj) {
         String sql = "" +
                 "INSERT INTO " +
-                "easybuy_product_category(`name`,`parentId`,`type`) " +
-                "VALUES(?,?,?)";
+                "easybuy_product_category(`name`,`id1`,`id2`,`id3`) " +
+                "VALUES(?,?,?,?)";
         return runSQL.sqlUpdate(sql,
-                pc.getName(),
-                pc.getParentId(),
-                pc.getType());
+                obj.getName(),
+                obj.getId1(),
+                obj.getId2(),
+                obj.getId3());
     }
 
     /**
@@ -71,12 +72,13 @@ public class ProductCategoryDaoImpl
     public int set(ProductCategory pc) {
         String sql = "" +
                 "UPDATE easybuy_product_category " +
-                "SET `name`=?,`parentId`=?,`type`=? " +
+                "SET `name`=?,`id1`=?,`id2`=?,`id3`=? " +
                 "WHERE `id`= ?";
         return runSQL.sqlUpdate(sql,
                 pc.getName(),
-                pc.getParentId(),
-                pc.getType(),
+                pc.getId1(),
+                pc.getId2(),
+                pc.getId3(),
                 pc.getId());
     }
 
@@ -90,7 +92,7 @@ public class ProductCategoryDaoImpl
     public ProductCategory getById(int id) {
         //SQL语句
         String sql = "" +
-                "SELECT `id`,`name`,`parentId`,`type` " +
+                "SELECT `id`,`name`,`id1`,`id2`,`id3` " +
                 "FROM easybuy_product_category " +
                 "WHERE `id` = " + id;
         //执行SQL语句，返回记录对象
@@ -108,7 +110,7 @@ public class ProductCategoryDaoImpl
     public List<ProductCategory> getByField(String tag, String find) {
         //SQL语句
         String sql = "" +
-                "SELECT `id`,`name`,`parentId`,`type` " +
+                "SELECT `id`,`name`,`id1`,`id2`,`id3` " +
                 "FROM easybuy_product_category " +
                 "WHERE `" + tag + "` = ?";
         //执行SQL语句，返回数据集合
@@ -126,7 +128,7 @@ public class ProductCategoryDaoImpl
     @Override
     public List<ProductCategory> getByPages(int pageIndex, int pageSize) {
         String sql = "" +
-                "SELECT `id`,`name`,`parentId`,`type` " +
+                "SELECT `id`,`name`,`id1`,`id2`,`id3` " +
                 "FROM easybuy_product_category " +
                 "LIMIT ?,?";
         return runSQL.sqlQueryGetList(sql, ProductCategory.class,
@@ -143,7 +145,7 @@ public class ProductCategoryDaoImpl
     public List<ProductCategory> getAll() {
         //SQL语句
         String sql = "" +
-                "SELECT `id`,`name`,`parentId`,`type` " +
+                "SELECT `id`,`name`,`id1`,`id2`,`id3` " +
                 "FROM easybuy_product_category";
         //执行SQL语句，返回记录集合
         return runSQL.sqlQueryGetList(sql, ProductCategory.class);

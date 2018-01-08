@@ -23,9 +23,8 @@
     <link rel="stylesheet" type="text/css" href="css/rl.css"/>
     <!--主页部分    结束-->
     <!--JQuery-UI样式 -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/theme.css">
-    <link rel="stylesheet" href="js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
 </head>
 <body>
 <!-- 导航链接    开始 -->
@@ -144,15 +143,6 @@
                     <td class="rl_td_err"><span id="mobile_msg"></span></td>
                 </tr>
                 <!--手机号    E-->
-                <!--用户类型    S-->
-                <tr height="35">
-                    <td class="rl_td_spn"><span style="color: #f00; ">*</span>&nbsp;用户类型</td>
-                    <td class="rl_td_inp"><input class="rl_radio" type="radio" name="type" value="1" checked
-                                                 required><span>买家</span>
-                        <input class="rl_radio" type="radio" name="type" value="2" required><span>管理员</span></td>
-                    <td class="rl_td_err"></td>
-                </tr>
-                <!--用户类型    E-->
                 <!--附选项    E-->
                 <tr height="30" style="text-align: center">
                     <td class="reg_chk_btn" colspan="2">
@@ -178,7 +168,7 @@
 <!-- 注册结束    开始 -->
 <!--JQuery脚本    S-->
 <script src="js/jquery-3.2.1.js"></script>
-<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script src="js/md5.js"></script>
 <!-- S    注册区域样式-->
 <script>
