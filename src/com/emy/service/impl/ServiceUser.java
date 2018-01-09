@@ -1,6 +1,5 @@
 package com.emy.service.impl;
 
-import com.emy.service.ServiceUser;
 import com.emy.util.Log;
 import com.emy.entity.User;
 import com.emy.util.MathUtils;
@@ -18,21 +17,19 @@ import java.io.PrintWriter;
  * @author Kinlon
  * @version 1.0.0
  */
-public class ServiceUserImpl
-        extends PublicService
-        implements ServiceUser {
+public class ServiceUser
+        extends PublicService{
 
     /**
      * 构造方法，不允许无参数
      */
-    public ServiceUserImpl(HttpServletRequest req, HttpServletResponse res) {
+    public ServiceUser(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
     }
 
     /**
      * 修改用户信息
-     */
-    @Override
+     */    
     public void setUser() {
         switch (checkIsLogin()) {
             case 0:
@@ -80,7 +77,6 @@ public class ServiceUserImpl
     /**
      * 帐号登出
      */
-    @Override
     public void logout() {
         switch (checkIsLogin()) {
             case 0:
@@ -104,7 +100,6 @@ public class ServiceUserImpl
     /**
      * 帐号登陆
      */
-    @Override
     public void login() {
         //1.获取登录信息
         Log.logToConsole("请求", "登录");
@@ -134,7 +129,6 @@ public class ServiceUserImpl
     /**
      * 注册帐号
      */
-    @Override
     public void regist() {
         //1.获取注册信息
         Log.logToConsole("请求", "注册");
@@ -161,7 +155,6 @@ public class ServiceUserImpl
     /**
      * 注册_帐号可用性检测
      */
-    @Override
     public void registCheckLoginName() {
         //1.获取待检测的帐号
         String loginName = getStr("loginName");

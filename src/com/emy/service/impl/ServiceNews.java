@@ -3,7 +3,6 @@ package com.emy.service.impl;
 import com.emy.dao.news.NewsDao;
 import com.emy.dao.news.impl.NewsDaoImpl;
 import com.emy.entity.News;
-import com.emy.service.ServiceNews;
 import com.emy.util.Log;
 import com.emy.util.MathUtils;
 
@@ -16,23 +15,21 @@ import javax.servlet.http.HttpServletResponse;
  * @author Kinlon
  * @version 1.0.0
  */
-public class ServiceNewsImpl
-        extends PublicService
-        implements ServiceNews {
+public class ServiceNews
+        extends PublicService {
     private News news = new News();
     private NewsDao newsDao = new NewsDaoImpl();
 
     /**
      * 构造方法，不允许无参数
      */
-    public ServiceNewsImpl(HttpServletRequest req, HttpServletResponse res) {
+    public ServiceNews(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
     }
 
     /**
      * 添加资讯
      */
-    @Override
     public void addNews() {
         switch (checkIsLogin()) {
             case 0:
@@ -67,7 +64,6 @@ public class ServiceNewsImpl
     /**
      * 修改资讯信息
      */
-    @Override
     public void setNews() {
         switch (checkIsLogin()) {
             case 0:
@@ -104,7 +100,6 @@ public class ServiceNewsImpl
     /**
      * 删除资讯
      */
-    @Override
     public void deleteNews() {
         switch (checkIsLogin()) {
             case 0:

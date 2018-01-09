@@ -1,6 +1,6 @@
 ﻿项目名称：easybuy
 中文名称：易买网项目
-项目结构：
+项目分层：
 src:.
 │  
 ├─com        项目根目录
@@ -52,14 +52,19 @@ src:.
 │  │  │      FilterEncoding.java        字符编码过滤器
 │  │  │      
 │  │  ├─service        业务处理包
-│  │  │      Service.java        全部业务请求的调度分发类
-│  │  │      ServiceAddress.java        收货地址功能类
-│  │  │      ServiceNews.java        资讯功能类
-│  │  │      ServiceUser.java        用户功能业务类
-│  │  │      PublicService.java        公共业务方法类
+│  │  │  │  Service.java        业务请求的调度中心类
+│  │  │  │  ServiceAddress.java        收货地址功能接口类
+│  │  │  │  ServiceNews.java        资讯功能接口类
+│  │  │  │  ServiceUser.java        用户功能业务接口类
+│  │  │  │  
+│  │  │  └─impl
+│  │  │          PublicService.java        公共业务方法类
+│  │  │          ServiceAddressImpl.java        收货地址业务实现类
+│  │  │          ServiceNewsImpl.java        资讯功能业务实现类
+│  │  │          ServiceUserImpl.java        用户功能业务实现类
 │  │  │          
 │  │  ├─servlet        前台页面请求任务分发包
-│  │  │      Servlet_url.java        url关键字的请求业务分发类
+│  │  │      Servlet_url.java        url关键字的请求业务类
 │  │  │      
 │  │  └─util        工具包
 │  │          EncryptUtils.java        加密解密工具集

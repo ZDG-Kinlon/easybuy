@@ -16,7 +16,7 @@ import java.io.IOException;
  * @author Kinlon
  * @version 1.0.0
  */
-@WebServlet(urlPatterns = {"/url"}, name = "urlServlet") //Servlet3.0的配置
+@WebServlet(urlPatterns = {"/url"}, name = "urlServlet")
 public class Servlet_url extends HttpServlet {
     /**
      *

@@ -1,221 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="emy" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b26fc139-b7a7-477d-a8f3-d5ec50cb94b8" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/emy.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/db/easybuy.sql" afterPath="$PROJECT_DIR$/db/easybuy.sql" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/PublicDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/PublicFunctionDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/news/NewsDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/news/impl/NewsDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/order/OrderDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/order/OrderDetailDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/order/impl/OrderDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/order/impl/OrderDetailDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/product/ProductCategoryDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/product/ProductDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/product/impl/ProductCategoryDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/product/impl/ProductDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/user/UserAddressDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/user/UserDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/user/impl/UserAddressDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/dao/user/impl/UserDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/News.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/Order.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/OrderDetail.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/Product.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/ProductCategory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/entity/UserAddress.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/filter/FilterEncoding.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/Service.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/ServiceAddress.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/ServiceNews.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/ServiceUser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/impl/PublicService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/impl/ServiceAddressImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/impl/ServiceNewsImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/service/impl/ServiceUserImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/servlet/Servlet_url.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/EncryptUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/JsonUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/LoadConfigDatabaseUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/Log.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/MathUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/RegexUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/emy/util/RunSQL.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/test/Test01.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/com/test/Test02.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/config/database.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/easybuy/readme.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/PublicDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/PublicFunctionDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/news/NewsDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/news/impl/NewsDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/order/OrderDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/order/OrderDetailDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/order/impl/OrderDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/order/impl/OrderDetailDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/product/ProductCategoryDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/product/ProductDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/product/impl/ProductCategoryDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/product/impl/ProductDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/user/UserAddressDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/user/UserDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/user/impl/UserAddressDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/user/impl/UserDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/News.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/Order.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/OrderDetail.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/Product.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/ProductCategory.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/entity/UserAddress.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/filter/FilterEncoding.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/service/Service.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/dao/news/impl/NewsDaoImpl.java" afterPath="$PROJECT_DIR$/src/com/emy/dao/news/impl/NewsDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/service/Service.java" afterPath="$PROJECT_DIR$/src/com/emy/service/Service.java" />
       <change beforePath="$PROJECT_DIR$/src/com/emy/service/ServiceAddress.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/com/emy/service/ServiceNews.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/com/emy/service/ServiceUser.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/PublicService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddressImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceNewsImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceUserImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/EncryptUtils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/JsonUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/LoadConfigDatabaseUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/Log.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/MathUtils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/RegexUtils.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/emy/util/RunSQL.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/test/Test01.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/test/Test02.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/config/database.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/readme.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/PublicDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/PublicFunctionDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/news/NewsDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/news/impl/NewsDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/order/OrderDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/order/OrderDetailDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/order/impl/OrderDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/order/impl/OrderDetailDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/product/ProductCategoryDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/product/ProductDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/product/impl/ProductCategoryDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/product/impl/ProductDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/user/UserAddressDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/user/UserDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/user/impl/UserAddressDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/dao/user/impl/UserDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/News.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/Order.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/OrderDetail.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/Product.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/ProductCategory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/entity/UserAddress.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/filter/FilterEncoding.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/Service.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/ServiceAddress.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/ServiceNews.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/ServiceUser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/impl/PublicService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/impl/ServiceAddressImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/impl/ServiceNewsImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/service/impl/ServiceUserImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/servlet/Servlet_url.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/EncryptUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/JsonUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/LoadConfigDatabaseUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/Log.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/MathUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/RegexUtils.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/emy/util/RunSQL.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/test/Test01.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/test/Test02.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/config/database.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/readme.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.7.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/css/bass.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/css/html.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/css/rl.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/images/Thumbs.db" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/images/favicon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/images/logo_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/images/logo_ico.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/images/一级分类.psd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/infoPage.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/header_css_jq.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jbase64.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-3.2.1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/AUTHORS.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/external/jquery/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.structure.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.structure.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_gloss-wave_45_817865_500x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_gloss-wave_60_fece2f_500x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_gloss-wave_70_ffdd57_500x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_gloss-wave_90_fff9e5_500x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_highlight-soft_100_feeebd_1x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-bg_inset-soft_30_ffffff_1x100.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_3d3d3d_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_bd7b00_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_d19405_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_eb990f_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_ed9f26_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_fadc7a_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/images/ui-icons_ffe180_256x240.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/jquery-ui.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/js/md5.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/manager.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/regist.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/user.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web_back_01.rar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddressImpl.java" afterPath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddress.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceNewsImpl.java" afterPath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceNews.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceUserImpl.java" afterPath="$PROJECT_DIR$/src/com/emy/service/impl/ServiceUser.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java" afterPath="$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -229,7 +35,54 @@
     <favorites_list name="easybuy" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2618">
+              <caret line="119" column="6" lean-forward="false" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="infoPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/infoPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Servlet_url.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/emy/service/Service.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="96" column="26" lean-forward="false" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+              <folding>
+                <element signature="e#643#1441#0" expanded="false" />
+                <element signature="e#1541#2275#0" expanded="false" />
+                <element signature="e#2367#2907#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -237,8 +90,8 @@
         <option value="CSS File" />
         <option value="Class" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -247,11 +100,11 @@
       <find>\n</find>
       <find>System</find>
       <find>style=&quot;overflow-x: auto; overflow-y: auto; height: 200px;&quot;</find>
-      <find>@Override</find>
       <find>ui-widget-shadow</find>
       <find />
       <find>smoothness</find>
       <find>input</find>
+      <find>@Override</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -271,11 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/emy/service/Method_url.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/service/PublicFunction.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/service/Impl/PublicFunction.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/dao/PublicDao.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/dao/PublicFunctionDao.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/Impl/ServiceAddressImpl.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/ServiceUser.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/Impl/ServiceUserImpl.java" />
@@ -298,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/com/emy/service/Serviceitf.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/PublicService.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/ServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/Service.java" />
         <option value="$PROJECT_DIR$/web/Index.html" />
@@ -311,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/com/emy/service/ServiceAddress.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceNewsImpl.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/ServiceNews.java" />
-        <option value="$PROJECT_DIR$/src/com/emy/service/Service.java" />
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddressImpl.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/infoPage.jsp" />
@@ -320,8 +166,15 @@
         <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceUserImpl.java" />
         <option value="$PROJECT_DIR$/web/manager.jsp" />
         <option value="$PROJECT_DIR$/src/com/emy/entity/ProductCategory.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/emy/dao/product/impl/ProductCategoryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/a.jsp" />
+        <option value="$PROJECT_DIR$/src/com/emy/dao/news/impl/NewsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceUser.java" />
+        <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceNews.java" />
+        <option value="$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddress.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java" />
+        <option value="$PROJECT_DIR$/src/com/emy/service/Service.java" />
       </list>
     </option>
   </component>
@@ -338,11 +191,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="57" />
-    <option name="y" value="10" />
-    <option name="width" value="998" />
-    <option name="height" value="775" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="289" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -414,6 +266,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -423,28 +278,101 @@
             </path>
             <path>
               <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="emy" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybuy" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybuy" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -607,6 +535,7 @@
       <listeners />
     </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:6001/EMY" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -615,14 +544,10 @@
             <option name="CONTEXT_PATH" value="/EMY" />
           </settings>
         </file>
-        <file path="$PROJECT_DIR$/out">
-          <settings>
-            <option name="CONTEXT_PATH" value="" />
-          </settings>
-        </file>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_easybuy_3" />
+        <option name="PRESERVE_SESSIONS" value="true" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -738,15 +663,19 @@
       <workItem from="1515117365775" duration="47827000" />
       <workItem from="1515219225732" duration="52975000" />
       <workItem from="1515387720202" duration="5543000" />
-      <workItem from="1515396233351" duration="19783000" />
+      <workItem from="1515396233351" duration="19919000" />
+      <workItem from="1515479736607" duration="4787000" />
+      <workItem from="1515487255202" duration="1315000" />
+      <workItem from="1515488630059" duration="9804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275753000" />
+    <option name="totallyTimeSpent" value="291795000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="10" width="998" height="775" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -755,27 +684,27 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37931034" sideWeight="0.50678736" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3718141" sideWeight="0.50951684" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80509746" sideWeight="0.49048316" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3748126" sideWeight="0.49321267" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30448064" sideWeight="0.48725638" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.238653" sideWeight="0.48725638" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27044025" sideWeight="0.51215804" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22327965" sideWeight="0.51274365" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23133236" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22327965" sideWeight="0.51274365" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -789,12 +718,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3248869" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23133236" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -802,14 +731,14 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25487256" sideWeight="0.49321267" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34332833" sideWeight="0.49321267" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20937042" sideWeight="0.48784193" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25841874" sideWeight="0.48725638" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27044025" sideWeight="0.51215804" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32815534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22327965" sideWeight="0.51274365" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -822,8 +751,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceUserImpl.java</url>
-          <line>123</line>
+          <url>file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceUser.java</url>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
@@ -831,91 +760,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="39" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/PublicService.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/Serviceitf.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="67" column="51" lean-forward="true" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="157" column="17" lean-forward="false" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="137" column="41" lean-forward="false" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/function/BiConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Index.html" />
-    <entry file="file://$PROJECT_DIR$/web/js/jquery.bxslider_e88acd1b.js" />
-    <entry file="file://$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/util/MathUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/entity/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/index_jq.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/js/index_jq.js" />
-    <entry file="file://$PROJECT_DIR$/web/css/bass.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="0" column="822" lean-forward="false" selection-start-line="0" selection-start-column="822" selection-end-line="0" selection-end-column="822" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.12.1/jquery-ui.css" />
     <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.12.1/external/jquery/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -989,14 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/setAddress.jsp" />
     <entry file="file://$PROJECT_DIR$/web/setUser.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/ServiceAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/ServiceAddress.java" />
     <entry file="file://$PROJECT_DIR$/web/setNews.jsp" />
     <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/PublicService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1006,106 +848,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/ServiceNews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="66" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddressImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="90" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="186" selection-end-column="1" />
-          <folding>
-            <element signature="method#setAddress#0;class#ServiceAddressImpl#0" expanded="false" />
-            <element signature="method#deleteAddress#0;class#ServiceAddressImpl#0" expanded="false" />
-            <element signature="method#setDefaultAddress#0;class#ServiceAddressImpl#0" expanded="false" />
-            <element signature="method#addAddress#0;class#ServiceAddressImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceNewsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="50" column="1" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/infoPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="180" column="47" lean-forward="false" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/regist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2900">
-          <caret line="145" column="31" lean-forward="false" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceUserImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Base64.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="713" column="0" lean-forward="false" selection-start-line="713" selection-start-column="0" selection-end-line="713" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="59" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/manager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="222" column="91" lean-forward="false" selection-start-line="222" selection-start-column="91" selection-end-line="222" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.12.1/themes/sunny/jquery-ui.css" />
     <entry file="file://$PROJECT_DIR$/src/com/emy/entity/ProductCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1118,15 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
           <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="143" column="46" lean-forward="true" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,16 +872,260 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/FunctionalInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="67" column="25" lean-forward="true" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="67" column="29" lean-forward="false" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Comparable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="96" column="7" lean-forward="true" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/a.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/ServiceNews.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="163" column="16" lean-forward="true" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/impl/ServiceNews.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="101" column="7" lean-forward="false" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+          <folding>
+            <element signature="e#596#597#0" expanded="false" />
+            <element signature="e#627#628#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/dao/news/impl/NewsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="133" column="24" lean-forward="true" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/dao/news/NewsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/regist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Base64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3840">
+          <caret line="227" column="10" lean-forward="true" selection-start-line="227" selection-start-column="10" selection-end-line="227" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/dao/PublicDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#add#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#del#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#clc#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#set#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#getById#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#getByField#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#getByPages#0;class#PublicDao#0" expanded="false" />
+            <element signature="docComment;method#getAll#0;class#PublicDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3600">
+          <caret line="180" column="47" lean-forward="false" selection-start-line="180" selection-start-column="47" selection-end-line="180" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/manager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/infoPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="119" column="6" lean-forward="false" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/function/BiConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="212" column="7" lean-forward="true" selection-start-line="212" selection-start-column="7" selection-end-line="212" selection-end-column="7" />
+          <folding>
+            <element signature="e#10351#10352#0" expanded="false" />
+            <element signature="e#10385#10386#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+          <folding>
+            <element signature="e#1244#1245#0" expanded="false" />
+            <element signature="e#1267#1268#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/RuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding>
+            <element signature="e#1172#1173#0" expanded="false" />
+            <element signature="e#1195#1196#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/NullPointerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1414#1415#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="215" column="46" lean-forward="true" selection-start-line="215" selection-start-column="46" selection-end-line="215" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Tomcat 9.0/lib/servlet-api.jar!/javax/servlet/annotation/WebServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/service/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="96" column="26" lean-forward="false" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+          <folding>
+            <element signature="e#643#1441#0" expanded="false" />
+            <element signature="e#1541#2275#0" expanded="false" />
+            <element signature="e#2367#2907#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/emy/servlet/Servlet_url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>emy</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1155,7 +1133,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web</last-edited>
+          <last-edited>Web (easybuy)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1215,6 +1193,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>fastjson-1.2.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

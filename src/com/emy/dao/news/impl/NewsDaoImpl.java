@@ -148,7 +148,8 @@ public class NewsDaoImpl
         //SQL语句
         String sql = "" +
                 "SELECT `id`,`title`,`content`,`creatTime` " +
-                "FROM easybuy_news";
+                "FROM easybuy_news " +
+                "ORDER BY `creatTime` DESC";
         //执行SQL语句，返回数据集合
         return runSQL.sqlQueryGetList(sql, News.class);
     }

@@ -9,9 +9,8 @@
 <%@ page import="com.emy.entity.ProductCategory" %>
 <%@ page import="com.emy.dao.product.ProductCategoryDao" %>
 <%@ page import="com.emy.dao.product.impl.ProductCategoryDaoImpl" %>
-<%@ page import="java.util.function.Function" %>
-<%@ page import="java.util.function.BiFunction" %>
-<%@ page import="java.util.*" %><%--
+<%@ page import="java.util.Base64" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Kinlon
   Date: 2018/1/2
@@ -169,7 +168,7 @@
 		                             //找到三级分类的第一个
 			%><ul><%
 				                }
-				                String url = "_" + n1 + "_" + n2 + "_" + n3;
+				                String url = "" + n1 + "_" + n2 + "_" + n3;
 			%><li><a href="#_<%=url%>"><%=pc3.getName()%></a></li><%
 			               }
 			               if (i3 == pcs - 1 && n3 > 0) {

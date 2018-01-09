@@ -3,7 +3,6 @@ package com.emy.service.impl;
 import com.emy.dao.user.UserAddressDao;
 import com.emy.dao.user.impl.UserAddressDaoImpl;
 import com.emy.entity.UserAddress;
-import com.emy.service.ServiceAddress;
 import com.emy.util.Log;
 import com.emy.util.MathUtils;
 
@@ -16,16 +15,15 @@ import javax.servlet.http.HttpServletResponse;
  * @author Kinlon
  * @version 1.0.0
  */
-public class ServiceAddressImpl
-        extends PublicService
-        implements ServiceAddress {
+public class ServiceAddress
+        extends PublicService{
     private UserAddress userAddress = null;
     private UserAddressDao userAddressDao = new UserAddressDaoImpl();
 
     /**
      * 构造方法，不允许无参数
      */
-    public ServiceAddressImpl(HttpServletRequest req, HttpServletResponse res) {
+    public ServiceAddress(HttpServletRequest req, HttpServletResponse res) {
         super(req, res);
     }
 
@@ -53,7 +51,6 @@ public class ServiceAddressImpl
     /**
      * 修改收货地址
      */
-    @Override
     public void setAddress() {
         switch (checkIsLogin()) {
             case 0:
@@ -92,7 +89,6 @@ public class ServiceAddressImpl
     /**
      * 删除收货地址
      */
-    @Override
     public void deleteAddress() {
         switch (checkIsLogin()) {
             case 0:
@@ -126,7 +122,6 @@ public class ServiceAddressImpl
     /**
      * 设置默认收货地址
      */
-    @Override
     public void setDefaultAddress() {
         switch (checkIsLogin()) {
             case 0:
@@ -154,7 +149,6 @@ public class ServiceAddressImpl
     /**
      * 添加收货地址
      */
-    @Override
     public void addAddress() {
         switch (checkIsLogin()) {
             case 0:
